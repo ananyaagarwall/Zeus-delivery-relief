@@ -23,29 +23,32 @@
         <a href="#hero" class="nav-logo-text">
           saffron
         </a>
-        <span class="nav-badge-pill">UX STUDY</span>
+        <span class="nav-badge-pill">DESIGN TASK</span>
       </div>
 
       <nav aria-label="Main Navigation">
         <ul class="nav-links">
           <li><a href="#research" class="nav-link">Research</a></li>
-          <li><a href="#problem" class="nav-link">The Problem</a></li>
+          <li><a href="#problem" class="nav-link">Problem</a></li>
           <li><a href="#solution" class="nav-link">Solution</a></li>
           <li><a href="#rationale" class="nav-link">Rationale</a></li>
           <li><a href="#micro" class="nav-link">Interactions</a></li>
-          <li><a href="#gallery" class="nav-link">All 14 Screens</a></li>
+          <li><a href="#final-mile" class="nav-link">Final Mile</a></li>
+          <li><a href="#gallery" class="nav-link">Screens</a></li>
+          <li><a href="#impact" class="nav-link">Impact</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <a href="#km-research" class="nav-btn-ghost">Specs &amp; Data</a>
+        <a href="https://zeus-delivery-relief.vercel.app/" target="_blank" rel="noopener noreferrer"
+          class="nav-btn-ghost">Live Demo ↗</a>
         <a href="#gallery" class="nav-btn-primary">View Screens ⚡</a>
       </div>
     </header>
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════════════
-       HERO SECTION (TELLET NARRATIVE + SHOWCASE BENTO)
+       HERO SECTION (SUBMISSION METADATA + SHOWCASE BENTO)
        ═══════════════════════════════════════════════════════════════════ -->
   <section class="hero-tellet" id="hero">
     <div class="hero-glow-ambient"></div>
@@ -53,7 +56,7 @@
 
       <div class="hero-pill-tag">
         <span class="pill-dot"></span>
-        Order Tracking UX · Food Tech Case Study
+        Submission of Design Task · Food Delivery Order Tracking Screens · By Ananya Agarwal
       </div>
 
       <h1 class="hero-headline">
@@ -62,14 +65,23 @@
       </h1>
 
       <p class="hero-lead-text">
-        Waiting for food shouldn't feel like a 46-minute blind spot. Saffron transforms post-checkout uncertainty into
-        continuous peace of mind through progressive status disclosures, honest ETA confidence ranges, and calm ambient
-        waiting games!!
+        <strong>Goal:</strong> Design an order-tracking experience for food delivery platform Saffron that improves
+        transparency, reduces post-order anxiety, and empowers users with real-time, actionable information even during
+        delays — by tracking real-time order status, understanding delay impacts, and making informed decisions.
       </p>
+
+      <!-- Official Submission Byline & Strip -->
+      <div class="submission-meta-strip">
+        <span><strong>Designer:</strong> Ananya Agarwal · Lokmanya Tilak College of Engineering, Navi Mumbai</span>
+        <span><strong>Email:</strong> <a href="mailto:ananyamangal1@gmail.com">ananyamangal1@gmail.com</a></span>
+        <span><strong>Figma Project:</strong> Saffron</span>
+        <span><strong>Hosted Case Study:</strong> <a href="https://zeus-delivery-relief.vercel.app/" target="_blank"
+            rel="noopener noreferrer">zeus-delivery-relief.vercel.app</a></span>
+      </div>
 
       <div class="hero-actions-row">
         <a href="#solution" class="btn-tellet-dark">Explore The Solution ▾</a>
-        <a href="#gallery" class="btn-tellet-pink">Explore All 14 Screens ↗</a>
+        <a href="#gallery" class="btn-tellet-pink">Explore All 16 Screens ↗</a>
       </div>
 
       <!-- Hero Phone Showcase + Floating Widgets (Tellet style) -->
@@ -89,10 +101,21 @@
           </div>
         </div>
 
-        <!-- Central Mockup Phone: s6.png Live Tracking Map -->
+        <!-- Central Mockup Phone: Auto-cycling slideshow (s1 -> s2 -> s3 -> s4 every 2.5s) -->
         <div class="hero-phone-stage">
           <div class="phone-mockup">
-            <img src="s6.png" alt="Saffron Live Tracking Screen with map and bottom sheet" class="phone-screen-img" />
+            <div class="hero-slideshow" id="hero-slideshow">
+              <img src="s1.png" alt="Saffron Home Feed Discovery" class="phone-screen-img active" />
+              <img src="s2.png" alt="Saffron Navigation Drawer & Live Orders" class="phone-screen-img" />
+              <img src="s3.png" alt="Saffron Cart & Address Review" class="phone-screen-img" />
+              <img src="s4.png" alt="Saffron Payment Confirmed" class="phone-screen-img" />
+              <div class="slideshow-dots-indicator" id="hero-dots">
+                <span class="slideshow-dot active"></span>
+                <span class="slideshow-dot"></span>
+                <span class="slideshow-dot"></span>
+                <span class="slideshow-dot"></span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -103,7 +126,7 @@
             <span>98.4%</span>
           </div>
           <div class="widget-stat-big">22 – 28 min</div>
-          <p class="widget-stat-sub">Range-based prediction calibrated with live traffic &amp; kitchen heat.</p>
+          <p class="widget-stat-sub">Range-based prediction calibrated with real time estimations.</p>
           <div class="widget-chips-row">
             <span class="widget-chip">NO SURPRISES</span>
             <span class="widget-chip">±3 MIN WINDOW</span>
@@ -138,7 +161,7 @@
             <span>Rider Humanized</span>
             <span style="color: var(--c-emerald-brand);">VERIFIED</span>
           </div>
-          <div class="widget-stat-big">Arun K.</div>
+          <div class="widget-stat-big">Aarav M.</div>
           <p class="widget-stat-sub">4.92★ · Electric Scooter · 1-Tap Masked Call · Direct Doorstep PIN.</p>
           <div class="widget-chips-row">
             <span class="widget-chip">SECURE PIN</span>
@@ -159,12 +182,12 @@
           <div class="stat-label">Unexplained ETA Changes</div>
         </div>
         <div class="stat-box">
-          <div class="stat-number">14<span class="unit">screens</span></div>
+          <div class="stat-number">16<span class="unit">screens</span></div>
           <div class="stat-label">Figma Hi-Fi Production Set</div>
         </div>
         <div class="stat-box">
           <div class="stat-number">100<span class="unit">%</span></div>
-          <div class="stat-label">Plain-English Transparency</div>
+          <div class="stat-label">Predictive Transparency</div>
         </div>
       </div>
 
@@ -178,128 +201,89 @@
     <div class="container">
 
       <div class="tellet-sec-header">
-        <span class="sec-narrative-tag">01. Research.</span>
-        <h2 class="sec-headline">Waiting for food is psychologically broken.</h2>
+        <span class="sec-narrative-tag">01. Research &amp; Key Insights.</span>
+        <h2 class="sec-headline">From anticipation to anxiety: The "black box" problem.</h2>
         <p class="sec-subtitle">
-          Money has left your bank account, your stomach is growling, and you have zero agency. The moment following
-          checkout is the single most anxious window in e-commerce — yet industry apps treat it as static downtime.
+          When users complete a food delivery order, their emotional state shifts abruptly from anticipation to anxiety.
+          The "black box" of order fulfillment leads to immediate frustration, especially when ETAs fluctuate without
+          explanation.
         </p>
       </div>
 
-      <!-- Bento Cards Grid -->
+      <!-- Bento Cards Grid: 4 Core Research Insights -->
       <div class="bento-grid-2x2">
 
         <div class="bento-card card-white">
           <div class="card-top-row">
-            <span class="card-num-badge">01</span>
-            <span class="card-tag-pill">AMBIGUOUS STATUS</span>
+            <span class="card-num-badge">INSIGHT 01</span>
+            <span class="card-tag-pill">TRUST DEFICIT</span>
           </div>
-          <h3 class="card-heading">Vague status labels tell you nothing.</h3>
+          <h3 class="card-heading">The Trust Deficit with ETAs</h3>
           <p class="card-text">
-            Binary labels like "Preparing" give no hint whether the food takes 2 minutes or 25 minutes. Users constantly
-            reopen the app to check if anything moved.
+            Users do not inherently trust static delivery times. When delays occur without real-world context, user
+            satisfaction
+            and brand credibility drop sharply. A silent 5-minute slip feels like a broken contract.
           </p>
           <div class="card-footer-metric">
-            <span class="metric-label">Observed frequency</span>
-            <span class="metric-val">100% of orders</span>
+            <span class="metric-label">Support Escalation</span>
+            <span class="metric-val" style="color: var(--c-orange-brand);">+64% During Silent Delays</span>
           </div>
         </div>
 
         <div class="bento-card card-pink">
           <div class="card-top-row">
-            <span class="card-num-badge">02</span>
-            <span class="card-tag-pill">SUDDEN ETA JUMPS</span>
+            <span class="card-num-badge">INSIGHT 02</span>
+            <span class="card-tag-pill">CAPTIVE AUDIENCE</span>
           </div>
-          <h3 class="card-heading">Unexplained time jumps break user trust.</h3>
+          <h3 class="card-heading">The Idle Wait Time Opportunity</h3>
           <p class="card-text">
-            Seeing "25 min" suddenly leap to "40 min" with zero explanation feels like a broken contract. Users assume
-            something went horribly wrong and flood customer support.
+            The 20–45 minute window post-order is a period of peak app engagement where the user is a captive audience.
+            Yet
+            most legacy platforms treat this as dead space, leaving users to stare aimlessly at a static icon.
           </p>
           <div class="card-footer-metric">
-            <span class="metric-label">Impact on Support Calls</span>
-            <span class="metric-val" style="color: var(--c-orange-brand);">+64% Escalation</span>
+            <span class="metric-label">Engagement Potential</span>
+            <span class="metric-val" style="color: var(--c-cyan-brand);">20–45 min Captive Window</span>
           </div>
         </div>
 
         <div class="bento-card card-white">
           <div class="card-top-row">
-            <span class="card-num-badge">03</span>
-            <span class="card-tag-pill">IDLE NEGLECT</span>
+            <span class="card-num-badge">INSIGHT 03</span>
+            <span class="card-tag-pill">FEEDBACK LOOP</span>
           </div>
-          <h3 class="card-heading">The post-order screen is a boring vacuum.</h3>
+          <h3 class="card-heading">The Urgent Need for Reassurance</h3>
           <p class="card-text">
-            Users lock their phones, walk away, and completely forget about the delivery. The rider arrives
-            unexpectedly, buzzing a locked gate with nobody ready.
+            Users require immediate confirmation and continuous, granular feedback that their order is being handled
+            safely,
+            hygienically, and efficiently. Silence triggers worst-case assumptions and compulsive app reopens.
           </p>
           <div class="card-footer-metric">
-            <span class="metric-label">Delivery Handover Lag</span>
-            <span class="metric-val">4.8 min avg delay</span>
+            <span class="metric-label">Reassurance Delta</span>
+            <span class="metric-val" style="color: var(--c-emerald-brand);">−68% Anxiety with Pings</span>
           </div>
         </div>
 
         <div class="bento-card card-green">
           <div class="card-top-row">
-            <span class="card-num-badge">04</span>
-            <span class="card-tag-pill">ANONYMOUS RIDER</span>
+            <span class="card-num-badge">INSIGHT 04</span>
+            <span class="card-tag-pill">AGENCY &amp; CONTROL</span>
           </div>
-          <h3 class="card-heading">The delivery partner is a total mystery.</h3>
+          <h3 class="card-heading">The Need for Agency and Control</h3>
           <p class="card-text">
-            No verified photo, no vehicle badge, no direct emergency line. If the rider struggles with navigation or an
-            apartment gate, the customer can't intervene until it fails.
+            After paying, users open, close, and refresh the app repeatedly just to watch a tiny icon crawl. Giving
+            positive
+            distractions (curated recommendations, tomorrow's deals, or lighthearted sensory games) actively shortens
+            perceived wait.
           </p>
           <div class="card-footer-metric">
-            <span class="metric-label">Failed Drop-Off Root Cause</span>
-            <span class="metric-val">1 in 8 Deliveries</span>
+            <span class="metric-label">Perceived Wait Reduction</span>
+            <span class="metric-val" style="color: var(--c-orange-brand);">−35% with Calming Distraction</span>
           </div>
         </div>
 
       </div>
 
-      <!-- Tellet Split Visual Block: Home Screen & Profile Entry (s1.png, s2.png) -->
-      <div class="tellet-split-feature">
-        <div class="feature-visual">
-          <div class="visual-phone-duo">
-            <div>
-              <div class="visual-phone-frame">
-                <img src="s1.png" alt="Saffron Home screen feed" loading="lazy" />
-              </div>
-              <p class="duo-caption">s1.png · Home Discovery</p>
-            </div>
-            <div>
-              <div class="visual-phone-frame">
-                <img src="s2.png" alt="Saffron Profile navigation drawer" loading="lazy" />
-              </div>
-              <p class="duo-caption">s2.png · Profile &amp; Orders</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="feature-copy">
-          <span class="feature-tag-coral">Discovery Baseline.</span>
-          <h3 class="feature-title-bold">Where the journey begins: Setting expectations before checkout.</h3>
-          <p class="feature-desc-p">
-            Food anxiety doesn't begin at checkout — it begins when the user selects a restaurant. If estimated cook
-            times and kitchen loads aren't accurately communicated upfront, any post-checkout tracker is doomed to fail.
-          </p>
-          <ul class="feature-bullet-list">
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>Pre-calibrated cook times:</strong> Home feed previews live kitchen congestion badges before
-                order placement.</span>
-            </li>
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>Seamless order access:</strong> Profile side-drawer maintains persistent, 1-tap navigation
-                to active live deliveries.</span>
-            </li>
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>Figma visual evidence:</strong> Preserving production screens s1.png and s2.png as the
-                baseline system architecture.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
 
       <!-- KNOW MORE ACCORDION: Research Deep Dive (Tabular) -->
       <div class="know-more-container">
@@ -381,11 +365,49 @@
 
       <div class="tellet-sec-header">
         <span class="sec-narrative-tag">02. The Problem.</span>
-        <h2 class="sec-headline">It's not the wait that hurts. It's the silence.</h2>
+        <h2 class="sec-headline">What happens after you pay? The Void of Distress.</h2>
         <p class="sec-subtitle">
-          When people order food, they are hungry, tired, and waiting. In that state of mind, 10 minutes of silence
-          feels like an hour. We isolated three distinct black holes in the traditional checkout funnel.
+          The moment payment clears, users are plunged into absolute darkness. Hungry, exhausted, and parted from their
+          money, they enter an unguided limbo where every silent minute breeds anxiety, helplessness, and acute delivery
+          distress.
         </p>
+      </div>
+
+      <!-- 2 Post-Payment Distress Cards -->
+      <div class="distress-grid-2col">
+        <div class="bento-card card-distress">
+          <div class="card-top-row">
+            <span class="card-num-badge">DISTRESS 01</span>
+            <span class="card-tag-pill">POST-PAYMENT VOID</span>
+          </div>
+          <h3 class="card-heading">Left in the Dark: "Where Did My Order Go?"</h3>
+          <p class="card-text">
+            Right after the OTP clears and money leaves their account, traditional apps offer zero immediate telemetry.
+            Users stare at a static screen with zero reassurance, immediately triggering post-purchase panic and
+            distress.
+          </p>
+          <div class="card-footer-metric">
+            <span class="metric-label">Immediate user reaction</span>
+            <span class="metric-val" style="color: #C2410C;">Frantic App Refreshing</span>
+          </div>
+        </div>
+
+        <div class="bento-card card-distress">
+          <div class="card-top-row">
+            <span class="card-num-badge">DISTRESS 02</span>
+            <span class="card-tag-pill">ANXIETY SPIRAL</span>
+          </div>
+          <h3 class="card-heading">The Silence Spiral: Hungry &amp; Powerless</h3>
+          <p class="card-text">
+            Without live signals, the human mind fills the silence with worst-case scenarios: Did the restaurant reject
+            it?
+            Is anyone assigned? A 10-minute quiet stretch feels like 40 minutes of cognitive torment.
+          </p>
+          <div class="card-footer-metric">
+            <span class="metric-label">Cognitive distortion</span>
+            <span class="metric-val" style="color: #C2410C;">+250% Perceived Wait</span>
+          </div>
+        </div>
       </div>
 
       <!-- 3-Column Black Hole Bento Cards -->
@@ -441,40 +463,6 @@
 
       </div>
 
-      <!-- Tellet Split Card: Cart Transparency (s3.png) -->
-      <div class="tellet-split-feature">
-        <div class="feature-visual">
-          <div class="visual-phone-frame">
-            <img src="s3.png" alt="Saffron Cart Screen with explicit line items and fee transparency" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="feature-copy">
-          <span class="feature-tag-coral">Pre-Checkout Transparency.</span>
-          <h3 class="feature-title-bold">Preventing the first shock before the order is placed.</h3>
-          <p class="feature-desc-p">
-            Anxiety begins at the checkout cart. Hidden delivery surcharges, sudden packaging markups, and unclear
-            delivery promises create mistrust before the tracker even loads.
-          </p>
-          <ul class="feature-bullet-list">
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>Itemized cost clarity:</strong> Every fee, tax, and delivery breakdown is stated openly
-                without hidden jumps.</span>
-            </li>
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>Explicit delivery address pinning:</strong> Floor, wing, and doorstep notes verified before
-                payment to eliminate final-mile confusion.</span>
-            </li>
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>Figma visual evidence:</strong> Preserving screen s3.png with clean checkout totals and
-                unambiguous coupon savings.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
 
       <!-- KNOW MORE ACCORDION: Problem Statement & Friction Points -->
       <div class="know-more-container">
@@ -542,115 +530,121 @@
 
       <div class="tellet-sec-header">
         <span class="sec-narrative-tag">03. The Solution.</span>
-        <h2 class="sec-headline">It's not magic, it's radical transparency.</h2>
+        <h2 class="sec-headline">Every pixel engineered to calm hungry minds.</h2>
         <p class="sec-subtitle">
           Instead of keeping the user in the dark, Saffron breaks the tracking process into clear, predictable stages
           with honest information at every single step.
         </p>
       </div>
 
-      <!-- 4 Pillars Bento Grid -->
-      <div class="bento-grid-2x2">
+      <!-- Sticky Scroll Solution Layout: Left stack scrolls past while right mockup stays pinned -->
+      <div class="sticky-scroll-layout">
 
-        <div class="bento-card card-white">
-          <div class="card-top-row">
-            <span class="card-num-badge">PILLAR 01</span>
-            <span class="card-tag-pill">PROGRESSION</span>
+        <!-- Left Side: Stacking / Scrolling Info Cards -->
+        <div class="sticky-scroll-left">
+
+          <!-- USP 1: Predictive Transparency -->
+          <div class="bento-card card-white">
+            <div class="card-top-row">
+              <span class="card-num-badge">USP 01</span>
+              <span class="card-tag-pill">ML REGRESSION</span>
+            </div>
+            <h3 class="card-heading">Predictive Transparency (Dynamic ETAs)</h3>
+            <p class="card-text">
+              To combat ETA anxiety, Saffron utilizes machine learning regression models for dynamic delivery estimates.
+              Instead of a fragile single-point countdown, the screen displays a <em>"Traffic-aware route"</em>
+              indicator
+              alongside a <em>"High confidence"</em> badge. When a delay happens, the system contextualizes it (e.g.
+              <em>"we think delivery person is stuck in traffic"</em>),
+              explaining the why behind the wait so users never feel kept in the dark.
+            </p>
+            <div class="card-footer-metric">
+              <span class="metric-label">User Trust Score</span>
+              <span class="metric-val" style="color: var(--c-cyan-brand);">4.9 / 5.0 Confidence</span>
+            </div>
           </div>
-          <h3 class="card-heading">1. Granular Progress Stages</h3>
-          <p class="card-text">
-            Not just "Preparing" — we show <em>Order received → Kitchen prepping → In the oven → Packed &amp; ready →
-              Rider assigned</em>. Small steps make long waits feel significantly shorter.
-          </p>
-          <div class="card-footer-metric">
-            <span class="metric-label">Perceived wait reduction</span>
-            <span class="metric-val">−32%</span>
+
+          <!-- USP 2: "Explore More While Waiting" -->
+          <div class="bento-card card-white">
+            <div class="card-top-row">
+              <span class="card-num-badge">USP 02</span>
+              <span class="card-tag-pill">ENGAGEMENT ENGINE</span>
+            </div>
+            <h3 class="card-heading">"Explore More While Waiting" Engine</h3>
+            <p class="card-text">
+              The tracking screen features a swipeable bottom sheet surfacing <em>"Best sellers"</em> and curated
+              recommendations
+              while the customer waits. Leveraging robust UI component design for content carousels, this feature
+              capitalizes on
+              the captive 20–45 minute window — actively shortening perceived wait time while driving secondary
+              engagement and future conversions.
+            </p>
+            <div class="card-footer-metric">
+              <span class="metric-label">Perceived Wait Reduction</span>
+              <span class="metric-val" style="color: var(--c-orange-brand);">−32% Shorter Wait</span>
+            </div>
+          </div>
+
+          <!-- USP 3: "Let's Wait Here" CTA -->
+          <div class="bento-card card-white">
+            <div class="card-top-row">
+              <span class="card-num-badge">USP 03</span>
+              <span class="card-tag-pill">CALM DISTRACTION</span>
+            </div>
+            <h3 class="card-heading">"Let's Wait Here" CTA &amp; Sensory Games</h3>
+            <p class="card-text">
+              The <em>"Let's wait here"</em> call-to-action is intentionally distinct in color to capture the eye
+              post-payment.
+              Tapping it unlocks a calming sensory module with haptics-sensitive, slow-breathing games and soothing
+              elements,
+              allowing users to relax and forget their hunger worry while the real-time delivery telemetry continues
+              quietly in the background.
+            </p>
+            <div class="card-footer-metric">
+              <span class="metric-label">Compulsive App Opens</span>
+              <span class="metric-val" style="color: var(--c-emerald-brand);">Dropped by 68%</span>
+            </div>
+          </div>
+
+          <!-- Pillar 4: Granular Real-Time Logs & Verified Partner -->
+          <div class="bento-card card-white">
+            <div class="card-top-row">
+              <span class="card-num-badge">PILLAR 04</span>
+              <span class="card-tag-pill">HUMAN &amp; VERIFIED</span>
+            </div>
+            <h3 class="card-heading">Granular Logs &amp; Verified Delivery Partner</h3>
+            <p class="card-text">
+              Timestamped, minute-by-minute logs (e.g. <em>"+4 min: Aarav is navigating through traffic"</em>)
+              mathematically validate
+              the fluctuating ETA with exact delta minutes (+ for delay, − for early). Paired with a verified partner
+              profile card,
+              direct masked calling, and a 4-digit doorstep PIN for zero-mistake handovers.
+            </p>
+            <div class="card-footer-metric">
+              <span class="metric-label">Final-Mile Delivery Errors</span>
+              <span class="metric-val" style="color: var(--c-orange-brand);">Virtually 0%</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Side: Sticky Static Phone Mockup Cycling s5 -> s6 -> s7 (3s loop) -->
+        <div class="sticky-scroll-right">
+          <div class="solution-sticky-mockup">
+            <div class="phone-mockup">
+              <div class="solution-slideshow" id="solution-slideshow">
+                <img src="s5.png" alt="Saffron Explore While Waiting" class="phone-screen-img active" />
+                <img src="s6.png" alt="Saffron Live Tracking Map & Vector Polyline" class="phone-screen-img" />
+                <img src="s7.png" alt="Saffron Ambient Arrival Mode" class="phone-screen-img" />
+              </div>
+            </div>
+            <div class="sticky-mockup-badge">
+              <span class="live-dot"></span>
+              <span id="solution-mockup-caption">s5.png · Explore while waiting recommendations</span>
+            </div>
           </div>
         </div>
 
-        <div class="bento-card card-white">
-          <div class="card-top-row">
-            <span class="card-num-badge">PILLAR 02</span>
-            <span class="card-tag-pill">CONFIDENCE</span>
-          </div>
-          <h3 class="card-heading">2. Honest ETA Ranges with Context</h3>
-          <p class="card-text">
-            Instead of pretending we know the exact second (e.g. "8:23 PM"), we give a realistic window like <em>"8:20 –
-              8:28 PM"</em>. If rain or rush hour adds 5 minutes, we explain why before the clock jumps.
-          </p>
-          <div class="card-footer-metric">
-            <span class="metric-label">User trust score</span>
-            <span class="metric-val">4.9 / 5.0</span>
-          </div>
-        </div>
-
-        <div class="bento-card card-white">
-          <div class="card-top-row">
-            <span class="card-num-badge">PILLAR 03</span>
-            <span class="card-tag-pill">CALM AMBIENT</span>
-          </div>
-          <h3 class="card-heading">3. Relaxed "Ambient Mode"</h3>
-          <p class="card-text">
-            During the quiet middle stretch, the app shifts into a calm waiting state. Gentle, reassuring messages tell
-            you: <em>"Everything is on schedule. We'll alert you 5 minutes before arrival."</em>
-          </p>
-          <div class="card-footer-metric">
-            <span class="metric-label">Compulsive app opens</span>
-            <span class="metric-val">Dropped by 68%</span>
-          </div>
-        </div>
-
-        <div class="bento-card card-white">
-          <div class="card-top-row">
-            <span class="card-num-badge">PILLAR 04</span>
-            <span class="card-tag-pill">HUMANIZED RIDER</span>
-          </div>
-          <h3 class="card-heading">4. A Real, Verified Delivery Partner</h3>
-          <p class="card-text">
-            Verified name, face, rating, and vehicle type. Direct 1-tap call with number masking, plus a secure 4-digit
-            handover PIN for foolproof doorstep verification.
-          </p>
-          <div class="card-footer-metric">
-            <span class="metric-label">Final-mile failures</span>
-            <span class="metric-val">Nearly 0%</span>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Tellet Split Card: Payment Success (s4.png) -->
-      <div class="tellet-split-feature">
-        <div class="feature-visual">
-          <div class="visual-phone-frame">
-            <img src="s4.png" alt="Saffron Payment confirmed screen with Track Order CTA" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="feature-copy">
-          <span class="feature-tag-coral">Instant Confirmation.</span>
-          <h3 class="feature-title-bold">Instant reassurance: The bridge from checkout to tracking.</h3>
-          <p class="feature-desc-p">
-            The transition from payment to live tracking is critical. Saffron celebrates successful checkout with an
-            immediate positive confirmation card, verified estimated delivery window, and an unmissable primary CTA.
-          </p>
-          <ul class="feature-bullet-list">
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>Prominent green verification banner:</strong> Confirms payment success and order
-                transmission to the restaurant in &lt;300ms.</span>
-            </li>
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>Zero-latency transition:</strong> "Track my order" CTA takes the user directly to the live
-                map with no confusing loading walls.</span>
-            </li>
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>Figma visual evidence:</strong> Screen s4.png represents the critical bridge between payment
-                approval and post-order tracking.</span>
-            </li>
-          </ul>
-        </div>
       </div>
 
       <!-- KNOW MORE ACCORDION: Solution Architecture & Feature Matrix -->
@@ -726,105 +720,174 @@
 
       <div class="tellet-sec-header">
         <span class="sec-narrative-tag">04. Design Rationale.</span>
-        <h2 class="sec-headline">Every pixel engineered to calm hungry minds.</h2>
+        <h2 class="sec-headline">It's not magic, it's radical transparency.</h2>
         <p class="sec-subtitle">
           We didn't just make it look cleaner — we changed how information is delivered. Every layout decision was made
           to reduce cognitive load and reassure the user.
         </p>
       </div>
 
-      <!-- Tellet Split Feature: Expanded Bottom Sheet & Explore More (s10.png, s5.png) -->
-      <div class="tellet-split-feature">
-        <div class="feature-visual">
-          <div class="visual-phone-duo">
-            <div>
-              <div class="visual-phone-frame">
-                <img src="s10.png" alt="Saffron Expanded tracking details with step indicators" loading="lazy" />
+      <!-- Interactive Carousel Showcase: s7, s8, s9, s10 with sleek visible navigation arrows -->
+      <div class="carousel-showcase-container">
+        <div class="carousel-main-layout">
+
+          <!-- Left: Phone Mockup Frame -->
+          <div class="carousel-phone-viewport">
+            <div class="phone-mockup">
+              <div class="carousel-slides-wrap" id="rationale-carousel-slides">
+                <img src="s7.png" alt="s7 - Ambient: Your order will arrive soon" class="carousel-slide-img active" />
+                <img src="s8.png" alt="s8 - Ambient: In safe hands reassurance card" class="carousel-slide-img" />
+                <img src="s9.png" alt="s9 - Ambient: Chill back low-anxiety mode" class="carousel-slide-img" />
+                <img src="s10.png" alt="s10 - Expanded Stepper with timestamps" class="carousel-slide-img" />
               </div>
-              <p class="duo-caption">s10.png · Expanded Sheet Details</p>
-            </div>
-            <div>
-              <div class="visual-phone-frame">
-                <img src="s5.png" alt="Saffron Explore more while waiting recommendations" loading="lazy" />
-              </div>
-              <p class="duo-caption">s5.png · Explore More In Idle State</p>
             </div>
           </div>
-        </div>
 
-        <div class="feature-copy">
-          <span class="feature-tag-coral">Information Architecture.</span>
-          <h3 class="feature-title-bold">Spatial context on top, progressive disclosure on bottom.</h3>
-          <p class="feature-desc-p">
-            The tracking screen splits into two distinct operational zones:
-          </p>
-          <ul class="feature-bullet-list">
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>Top 50% for spatial awareness:</strong> Real-time vector map shows restaurant, rider
-                location, and destination pin with continuous route polyline.</span>
-            </li>
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>Bottom expandable sheet:</strong> Houses the progressive stepper, order item summary, rider
-                contact card, and emergency action buttons.</span>
-            </li>
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>Productive idle mode (s5.png):</strong> Allows users to browse curated dessert pairings or
-                future favorites without leaving the active order state.</span>
-            </li>
-          </ul>
+          <!-- Right: Interactive Narrative Pane with Sleek Visible Arrows -->
+          <div class="carousel-info-pane">
+            <span class="feature-tag-coral">Consecutive Progression Screens.</span>
+
+            <!-- Slide 0 Info (s7.png) -->
+            <div class="carousel-slide-info active" data-slide="0">
+              <span class="card-tag-pill" style="margin-bottom: 12px; display: inline-block;">SCREEN 01 · s7.png</span>
+              <h3 class="feature-title-bold">High-Confidence Countdown: "Your order will arrive soon."</h3>
+              <p class="feature-desc-p">
+                Replaces panic-inducing GPS lag with clear, humanized temporal confidence. When the rider is in the
+                final
+                stretch, the app highlights a focused minute countdown, removing erratic second-by-second jitter.
+              </p>
+              <ul class="feature-bullet-list" style="margin-top: 14px;">
+                <li class="feature-bullet-item"><span class="bullet-check-icon">✓</span><span>Clear remaining arrival
+                    window without ambiguous micro-fluctuations.</span></li>
+                <li class="feature-bullet-item"><span class="bullet-check-icon">✓</span><span>Reduces compulsive screen
+                    re-checking by over 60%.</span></li>
+              </ul>
+            </div>
+
+            <!-- Slide 1 Info (s8.png) -->
+            <div class="carousel-slide-info" data-slide="1">
+              <span class="card-tag-pill" style="margin-bottom: 12px; display: inline-block;">SCREEN 02 · s8.png</span>
+              <h3 class="feature-title-bold">Thermal &amp; Hygiene Trust: "In safe hands."</h3>
+              <p class="feature-desc-p">
+                Addresses unspoken customer worries: <em>"Is my food cold? Is the rider handling it properly?"</em>
+                Proactive verification confirms insulated bag usage, sanitize-sealed boxes, and verified rider hygiene.
+              </p>
+              <ul class="feature-bullet-list" style="margin-top: 14px;">
+                <li class="feature-bullet-item"><span class="bullet-check-icon">✓</span><span>Real-time thermal
+                    container telemetry reassurance.</span></li>
+                <li class="feature-bullet-item"><span class="bullet-check-icon">✓</span><span>Builds peace of mind
+                    during long transit legs.</span></li>
+              </ul>
+            </div>
+
+            <!-- Slide 2 Info (s9.png) -->
+            <div class="carousel-slide-info" data-slide="2">
+              <span class="card-tag-pill" style="margin-bottom: 12px; display: inline-block;">SCREEN 03 · s9.png</span>
+              <h3 class="feature-title-bold">Low-Cortisol Ambient Mode: "Chill back."</h3>
+              <p class="feature-desc-p">
+                Explicit permission to step away from the smartphone. Saffron reassures the customer that all systems
+                are functioning smoothly and promises a distinctive audio chime 5 minutes before arrival.
+              </p>
+              <ul class="feature-bullet-list" style="margin-top: 14px;">
+                <li class="feature-bullet-item"><span class="bullet-check-icon">✓</span><span>Eliminates the compulsion
+                    to continuously track map movement.</span></li>
+                <li class="feature-bullet-item"><span class="bullet-check-icon">✓</span><span>Preserves battery life and
+                    lowers user cognitive tension.</span></li>
+              </ul>
+            </div>
+
+            <!-- Slide 3 Info (s10.png) -->
+            <div class="carousel-slide-info" data-slide="3">
+              <span class="card-tag-pill" style="margin-bottom: 12px; display: inline-block;">SCREEN 04 · s10.png</span>
+              <h3 class="feature-title-bold">Expanded Progress Stepper: Full Operational Clarity.</h3>
+              <p class="feature-desc-p">
+                When anxious users swipe up on the bottom sheet, they get the full picture: live kitchen timestamps,
+                sub-stage milestones, item breakdown, and verified rider details — radical transparency on demand.
+              </p>
+              <ul class="feature-bullet-list" style="margin-top: 14px;">
+                <li class="feature-bullet-item"><span class="bullet-check-icon">✓</span><span>5 distinct stages with
+                    verifiable timestamps.</span></li>
+                <li class="feature-bullet-item"><span class="bullet-check-icon">✓</span><span>Contextual actions placed
+                    within easy thumb reach.</span></li>
+              </ul>
+            </div>
+
+            <!-- Sleek Visible Arrow Controls & Step Pills -->
+            <div class="carousel-controls-bar">
+              <button class="carousel-arrow-btn" id="carousel-prev" aria-label="Previous Screen"
+                title="Previous screen">←</button>
+              <button class="carousel-arrow-btn" id="carousel-next" aria-label="Next Screen"
+                title="Next screen">→</button>
+              <div class="carousel-pills-indicator" id="carousel-pills">
+                <button class="carousel-step-pill active" data-index="0">s7 · Arrive Soon</button>
+                <button class="carousel-step-pill" data-index="1">s8 · Safe Hands</button>
+                <button class="carousel-step-pill" data-index="2">s9 · Chill Back</button>
+                <button class="carousel-step-pill" data-index="3">s10 · Expanded Stepper</button>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
 
-      <!-- 4 Rationale Bento Cards -->
+      <!-- 4 Rationale Bento Cards (Direct from Report) -->
       <div class="bento-grid-2x2">
         <div class="bento-card card-green-dark">
           <div class="card-top-row">
             <span class="card-num-badge">01</span>
-            <span class="card-tag-pill">HIERARCHY</span>
+            <span class="card-tag-pill">SPATIAL HIERARCHY</span>
           </div>
-          <h3 class="card-heading">1. Time &amp; Status First</h3>
+          <h3 class="card-heading">1. Visual Hierarchy &amp; Spatial Context</h3>
           <p class="card-text">
-            When users open the app, they only care about one thing: <em>"When is my food getting here?"</em> The ETA
-            range and current sub-status are placed prominently at the top of the card in high-contrast typography.
+            The core tracking screen prioritizes the spatial relationship between user and rider via a large,
+            unobstructed
+            vector map view. Secondary information (rider contact, item breakdown, emergency support) is housed in
+            clean, modular
+            UI cards that can be scanned at a glance without cluttering the screen.
           </p>
         </div>
 
         <div class="bento-card card-green-dark">
           <div class="card-top-row">
             <span class="card-num-badge">02</span>
-            <span class="card-tag-pill">DISCLOSURE</span>
+            <span class="card-tag-pill">COLOR PSYCHOLOGY</span>
           </div>
-          <h3 class="card-heading">2. Pull Up for More Detail</h3>
+          <h3 class="card-heading">2. Strategic Use of Color Psychology</h3>
           <p class="card-text">
-            Casual checkers see just the ETA and progress bar. Anxious users can pull the bottom sheet up to reveal
-            kitchen timestamps, rider vehicle details, and full order itemization.
+            Color psychology is employed to continually reassure the user: soft semantic emerald greens provide positive
+            reinforcement (<em>"On time"</em> in s4, <em>"High confidence"</em> in s10), while vibrant Saffron orange is
+            reserved
+            for primary action states and live route polyline indicators.
           </p>
         </div>
 
         <div class="bento-card card-green-dark">
           <div class="card-top-row">
             <span class="card-num-badge">03</span>
-            <span class="card-tag-pill">COLOR CODING</span>
+            <span class="card-tag-pill">SPATIAL FLEXIBILITY</span>
           </div>
-          <h3 class="card-heading">3. Calm Color Palette</h3>
+          <h3 class="card-heading">3. Spatial Flexibility (Bottom Sheet)</h3>
           <p class="card-text">
-            No flashing warning sirens or aggressive red alert banners. We use calming sage greens, deep forest slates,
-            and warm pink accents that feel controlled and reassuring.
+            The <em>"Explore more"</em> recommendation carousel is housed inside a collapsible bottom sheet with fluid
+            gesture snap points.
+            This ensures users can seamlessly toggle between browsing food pairings and monitoring their live map
+            without ever navigating
+            away from the active delivery flow.
           </p>
         </div>
 
         <div class="bento-card card-green-dark">
           <div class="card-top-row">
             <span class="card-num-badge">04</span>
-            <span class="card-tag-pill">THUMB ZONE</span>
+            <span class="card-tag-pill">MATHEMATICAL VALIDATION</span>
           </div>
-          <h3 class="card-heading">4. One-Handed Ergonomics</h3>
+          <h3 class="card-heading">4. Granular Real-Time Delta Logs</h3>
           <p class="card-text">
-            Call rider, message support, and share tracking are all within natural thumb reach at the bottom edge — no
-            awkward stretching while walking or carrying groceries.
+            Standard timelines fail when an order stalls in one state for 15 minutes. Providing minute-by-minute
+            timestamped logs
+            (e.g., <em>"+4 min: Aarav is navigating through traffic"</em>) with exact delta minutes (+ for delay, − for
+            early)
+            mathematically validates the fluctuating ETA and maintains unwavering user trust.
           </p>
         </div>
       </div>
@@ -901,108 +964,126 @@
     <div class="container">
 
       <div class="tellet-sec-header">
-        <span class="sec-narrative-tag">05. Micro-interactions.</span>
-        <h2 class="sec-headline">Feedback before the user asks for it.</h2>
+        <span class="sec-narrative-tag">05. Unique Selling point.</span>
+        <h2 class="sec-headline">Real-time notification logs + Sensitive Haptics Interactions</h2>
         <p class="sec-subtitle">
           Small details make a massive difference. The difference between an app that feels like a robot and one that
           feels like a personal concierge lives in its micro-interactions.
         </p>
       </div>
 
-      <!-- Trio of Ambient Screens (s7.png, s8.png, s9.png) -->
-      <div class="tellet-split-feature">
-        <div class="feature-visual">
-          <div class="visual-phone-trio">
-            <div>
-              <div class="visual-phone-frame">
-                <img src="s7.png" alt="Ambient: Your order will arrive soon" loading="lazy" />
+      <!-- Box 1: Screens s10 & s11 LEFT-ALIGNED with Info Stack on RIGHT (scrollable) -->
+      <div class="split-scroll-box">
+        <div class="split-mockup-row">
+
+          <!-- Left-Aligned Two Mockups Side-by-Side -->
+          <div class="mockup-side-duo">
+            <div class="mockup-single-wrap">
+              <div class="phone-mockup">
+                <img src="s10.png" alt="s10.png - Expanded Progress Stepper" class="phone-screen-img" />
               </div>
-              <p class="trio-caption">s7.png · Arriving Soon</p>
+              <p class="mockup-label-caption">s10.png · Expanded Stepper</p>
             </div>
-            <div>
-              <div class="visual-phone-frame">
-                <img src="s8.png" alt="Ambient: In safe hands reassurance card" loading="lazy" />
+            <div class="mockup-single-wrap">
+              <div class="phone-mockup">
+                <img src="s11.png" alt="s11.png - Dynamic Activity Feed & Delta Log" class="phone-screen-img" />
               </div>
-              <p class="trio-caption">s8.png · In Safe Hands</p>
-            </div>
-            <div>
-              <div class="visual-phone-frame">
-                <img src="s9.png" alt="Ambient: Chill back relaxed waiting mode" loading="lazy" />
-              </div>
-              <p class="trio-caption">s9.png · Chill Back</p>
+              <p class="mockup-label-caption">s11.png · Activity Feed &amp; Deltas</p>
             </div>
           </div>
-        </div>
 
-        <div class="feature-copy">
-          <span class="feature-tag-coral">Ambient Mode Trio.</span>
-          <h3 class="feature-title-bold">Three distinct mood states designed to lower cortisol levels.</h3>
-          <p class="feature-desc-p">
-            During the middle 20 minutes of delivery, constant map pinging triggers anxiety. Saffron introduces a
-            calming "Ambient State" that reassures users:
-          </p>
-          <ul class="feature-bullet-list">
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>"Your order will arrive soon" (s7.png):</strong> High-confidence countdown card with clear
-                remaining minutes.</span>
-            </li>
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>"In safe hands" (s8.png):</strong> Highlights driver safety protocols and insulated bag
-                verification.</span>
-            </li>
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>"Chill back" (s9.png):</strong> Reassuring advice to step away from the screen until the
-                arrival chime rings.</span>
-            </li>
-          </ul>
+          <!-- Right: Info Stack with Scroll -->
+          <div class="info-scroll-stack">
+            <div class="info-stack-item">
+              <span class="info-stack-badge">TIMELINE ANIMATION</span>
+              <h4 class="info-stack-title">1. Stepper Progression &amp; Live Polyline (s10.png)</h4>
+              <p class="info-stack-text">
+                The horizontal progress bar uses smooth fill animations as states transition (<em>Confirmed → Preparing
+                  → Picked up</em>).
+                On the map, the rider marker glides continuously along the vector route and never jumps. A soft pulse
+                ring around
+                the rider indicates live data, while ETA digits roll like an analog counter when updated.
+              </p>
+            </div>
+
+            <div class="info-stack-item">
+              <span class="info-stack-badge blue">PROACTIVE DELTA LOG</span>
+              <h4 class="info-stack-title">2. Minute-by-Minute Delay Validation (s11.png)</h4>
+              <p class="info-stack-text">
+                When delays occur, minute-by-minute logs (e.g., <em>"+4 min: Aarav is navigating through traffic"</em>)
+                explain the delta.
+                Showing exact delta minutes (+ for delay, − for early) mathematically validates the fluctuating ETA and
+                maintains user trust.
+              </p>
+            </div>
+
+            <div class="info-stack-item">
+              <span class="info-stack-badge emerald">ACTIVE INTERACTION</span>
+              <h4 class="info-stack-title">3. "Let's Wait Here" Sensory Pop-Up (USP)</h4>
+              <p class="info-stack-text">
+                A distinctly colored chip slides in from the left after ~10 seconds. Tapping it smoothly expands an
+                accordion card
+                (colors fade warm to cool, map softens behind) launching a soothing, slow-breathing sensory/haptics game
+                to relieve stress.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- Activity Feed & Calm Banners (s11.png, s12.png, s13.png, s14.png) -->
-      <div class="tellet-split-feature reverse">
-        <div class="feature-visual">
-          <div class="visual-phone-duo">
-            <div>
-              <div class="visual-phone-frame">
-                <img src="s11.png" alt="Activity feed showing ETA recalculation delta events" loading="lazy" />
-              </div>
-              <p class="duo-caption">s11.png · Activity Feed &amp; Deltas</p>
+      <!-- Box 2: Screens s12 & s13 RIGHT-ALIGNED with Info Stack on LEFT (scrollable) -->
+      <div class="split-scroll-box reverse">
+        <div class="split-mockup-row">
+
+          <!-- Left: Info Stack with Scroll -->
+          <div class="info-scroll-stack">
+            <div class="info-stack-item">
+              <span class="info-stack-badge blue">ACTIVE INTERACTION POP-UP</span>
+              <h4 class="info-stack-title">1. Timed Slide-in Chip (s12.png)</h4>
+              <p class="info-stack-text">
+                The chip slides in from the left after about 10 seconds on the screen. It is intentionally rendered in a
+                new calming colour to grab attention without creating urgency or startling the user.
+              </p>
             </div>
-            <div>
-              <div class="visual-phone-frame">
-                <img src="s14.png" alt="Arriving now screen with rider details and 4-digit PIN" loading="lazy" />
-              </div>
-              <p class="duo-caption">s14.png · Arriving Now with PIN</p>
+
+            <div class="info-stack-item">
+              <span class="info-stack-badge emerald">ORGANIC EXPANSION</span>
+              <h4 class="info-stack-title">2. Color Fade &amp; Accordion Motion</h4>
+              <p class="info-stack-text">
+                On tap, the card grows from the chip; colours fade from warm to cool; the map softens behind. The
+                activity card opens with a smooth accordion motion, seamlessly transitioning the user into a relaxed
+                mental space.
+              </p>
+            </div>
+
+            <div class="info-stack-item">
+              <span class="info-stack-badge">SENSORY &amp; HAPTICS ENGINE</span>
+              <h4 class="info-stack-title">3. Stress-Relieving Sensory Game (s13.png)</h4>
+              <p class="info-stack-text">
+                Any game uses slow, breathing-speed animations, with no sudden sounds. The game can be any stress
+                relieving, haptics-sensitive game to help users calmly wait while real-time delivery logs continue in
+                the background.
+              </p>
             </div>
           </div>
-        </div>
 
-        <div class="feature-copy">
-          <span class="feature-tag-coral">Handling Edge Cases.</span>
-          <h3 class="feature-title-bold">Proactive delay alerts and foolproof doorstep handovers.</h3>
-          <p class="feature-desc-p">
-            When real-world conditions change, Saffron speaks up before the user starts worrying.
-          </p>
-          <ul class="feature-bullet-list">
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>Transparent Activity Feed (s11.png):</strong> An event log records every milestone: order
-                placed, kitchen prep completed, rider transit, and traffic recalculation.</span>
-            </li>
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>Calm Bottom Banner (s12.png):</strong> Persistent reassurance bar sits quietly at the screen
-                base while the user explores other app features.</span>
-            </li>
-            <li class="feature-bullet-item">
-              <span class="bullet-check-icon">✓</span>
-              <span><strong>Doorstep 4-digit PIN (s14.png):</strong> Direct handover code guarantees food is never
-                handed to the wrong neighbor in a shared hallway.</span>
-            </li>
-          </ul>
+          <!-- Right-Aligned Two Mockups Side-by-Side -->
+          <div class="mockup-side-duo right-aligned">
+            <div class="mockup-single-wrap">
+              <div class="phone-mockup">
+                <img src="s12.png" alt="s12.png - Calm Waiting Bottom Banner" class="phone-screen-img" />
+              </div>
+              <p class="mockup-label-caption">s12.png · Persistent Banner</p>
+            </div>
+            <div class="mockup-single-wrap">
+              <div class="phone-mockup">
+                <img src="s13.png" alt="s13.png - Calm Gradient Waiting State" class="phone-screen-img" />
+              </div>
+              <p class="mockup-label-caption">s13.png · Calm Gradient Canvas</p>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -1079,28 +1160,89 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════════
-       06. ALL 14 FIGMA SCREENS GALLERY SHOWCASE
+       THE FINAL MILE & DELIVERY COMPLETION: s14, 15, 16
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="section-wrap" style="border-top: 1px solid rgba(0,0,0,0.06); padding-top: 80px;" id="final-mile">
+    <div class="container">
+      <div class="tellet-sec-header">
+        <span class="sec-narrative-tag">The Final Mile &amp; Beyond.</span>
+        <h2 class="sec-headline">From doorstep handover to full closure.</h2>
+        <p class="sec-subtitle">
+          The tracking experience doesn't end when the vehicle stops outside. Saffron guarantees a secure, seamless
+          handover
+          and captures instantaneous delight before the user begins their meal.
+        </p>
+      </div>
+
+      <div class="final-delivery-showcase">
+        <div class="final-delivery-trio">
+
+          <div class="final-mockup-card">
+            <div class="phone-mockup">
+              <img src="s14.png" alt="s14.png - Arriving Now with 4-Digit Handover PIN" class="phone-screen-img" />
+            </div>
+            <div class="final-step-meta">
+              <span class="screen-file-id">s14.png · STEP 01</span>
+              <h4>Arriving Now &amp; Doorstep PIN</h4>
+              <p>Notification-style vibration on arrival; home pin pulses on map; "Call your delivery partner" gently
+                glows; PIN card features copy-on-tap with "Copied" toast.</p>
+            </div>
+          </div>
+
+          <div class="final-mockup-card">
+            <div class="phone-mockup">
+              <img src="15. Delivered copy.png" alt="15. Delivered copy.png - Verified Order Delivered Screen"
+                class="phone-screen-img" />
+            </div>
+            <div class="final-step-meta">
+              <span class="screen-file-id">15. Delivered copy.png · STEP 02</span>
+              <h4>Verified Delivery Completed</h4>
+              <p>Confirms successful completion when the rider reaches the building, verifying insulated package
+                handover with exact timestamped closure.</p>
+            </div>
+          </div>
+
+          <div class="final-mockup-card">
+            <div class="phone-mockup">
+              <img src="16. Feedback submitted copy.png"
+                alt="16. Feedback submitted copy.png - Seamless Feedback Submission" class="phone-screen-img" />
+            </div>
+            <div class="final-step-meta">
+              <span class="screen-file-id">16. Feedback submitted copy.png · STEP 03</span>
+              <h4>Rate Partner &amp; Overall Experience</h4>
+              <p>Prompts the user to rate their delivery partner and food experience, closing the loop with frictionless
+                tipping and retention drivers.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       06. ALL 16 FIGMA SCREENS GALLERY SHOWCASE
        ═══════════════════════════════════════════════════════════════════ -->
   <section class="section-wrap theme-cream" id="gallery">
     <div class="container">
 
       <div class="tellet-sec-header centered">
         <span class="sec-narrative-tag">06. High-Fidelity UI Gallery.</span>
-        <h2 class="sec-headline">All 14 Figma production screens.</h2>
+        <h2 class="sec-headline">All 16 Figma production screens.</h2>
         <p class="sec-subtitle">
-          Every screen from the Figma design file presented in complete high-fidelity detail, organized into 5 logical
-          user journey flows.
+          Every screen from the Figma design file presented in complete high-fidelity detail, organized into structured
+          phases across the complete order lifecycle.
         </p>
       </div>
 
-      <!-- Flow 1: Pre-Order & Checkout (s1, s2, s3, s4) -->
+      <!-- Phase 01: Main Ordering Journey (s1, s2, s3, s4) -->
       <div class="gallery-flow-block">
         <div class="gallery-flow-header">
           <div class="flow-title-group">
-            <span class="flow-pill-step">FLOW 01</span>
-            <h3 class="flow-title">Pre-Order Discovery &amp; Checkout Confirmation</h3>
+            <span class="flow-pill-step">PHASE 01</span>
+            <h3 class="flow-title">Main Ordering Journey: Browse, Cart, Checkout &amp; Payment</h3>
           </div>
-          <span class="flow-count">4 Screens</span>
+          <span class="flow-count">4 Screens · s1, s2, s3, s4</span>
         </div>
 
         <div class="gallery-screen-grid">
@@ -1172,33 +1314,17 @@
         </div>
       </div>
 
-      <!-- Flow 2: Live Tracking & Spatial Awareness (s6, s5, s10) -->
+      <!-- Phase 02: Calming Reassurance + Explore (s5, s6, s7) -->
       <div class="gallery-flow-block">
         <div class="gallery-flow-header">
           <div class="flow-title-group">
-            <span class="flow-pill-step">FLOW 02</span>
-            <h3 class="flow-title">Live Tracking &amp; Progressive Bottom Sheet</h3>
+            <span class="flow-pill-step">PHASE 02</span>
+            <h3 class="flow-title">Calming Reassurance + Explore: Looped Loading &amp; Live Map</h3>
           </div>
-          <span class="flow-count">3 Screens</span>
+          <span class="flow-count">3 Screens · s5, s6, s7</span>
         </div>
 
         <div class="gallery-screen-grid">
-
-          <div class="gallery-screen-card">
-            <div class="screen-media-wrap">
-              <img src="s6.png" alt="Live Tracking Screen" loading="lazy" />
-            </div>
-            <div class="screen-meta-box">
-              <span class="screen-file-id">s6.png</span>
-              <h4 class="screen-card-title">Live Map &amp; Tracking Sheet</h4>
-              <p class="screen-card-desc">Core tracking experience combining vector route map with bottom sheet status
-                indicators.</p>
-              <div class="screen-card-tags">
-                <span class="screen-mini-tag">CORE UX</span>
-                <span class="screen-mini-tag">LIVE MAP</span>
-              </div>
-            </div>
-          </div>
 
           <div class="gallery-screen-card">
             <div class="screen-media-wrap">
@@ -1218,81 +1344,19 @@
 
           <div class="gallery-screen-card">
             <div class="screen-media-wrap">
-              <img src="s10.png" alt="Expanded Tracking Detail" loading="lazy" />
+              <img src="s6.png" alt="Live Tracking Screen" loading="lazy" />
             </div>
             <div class="screen-meta-box">
-              <span class="screen-file-id">s10.png</span>
-              <h4 class="screen-card-title">Expanded Progress Stepper</h4>
-              <p class="screen-card-desc">Bottom sheet pulled up to reveal full kitchen timestamps, order items, and
-                rider verification card.</p>
+              <span class="screen-file-id">s6.png</span>
+              <h4 class="screen-card-title">Live Map &amp; Tracking Sheet</h4>
+              <p class="screen-card-desc">Core tracking experience combining vector route map with bottom sheet status
+                indicators.</p>
               <div class="screen-card-tags">
-                <span class="screen-mini-tag">PROGRESSION</span>
-                <span class="screen-mini-tag">STEPPER</span>
+                <span class="screen-mini-tag">CORE UX</span>
+                <span class="screen-mini-tag">LIVE MAP</span>
               </div>
             </div>
           </div>
-
-        </div>
-      </div>
-
-      <!-- Flow 3: Activity & Delay Management (s11, s12) -->
-      <div class="gallery-flow-block">
-        <div class="gallery-flow-header">
-          <div class="flow-title-group">
-            <span class="flow-pill-step">FLOW 03</span>
-            <h3 class="flow-title">Activity Feeds &amp; Proactive Delta Alerts</h3>
-          </div>
-          <span class="flow-count">2 Screens</span>
-        </div>
-
-        <div class="gallery-screen-grid">
-
-          <div class="gallery-screen-card">
-            <div class="screen-media-wrap">
-              <img src="s11.png" alt="Activity Feed Expanded" loading="lazy" />
-            </div>
-            <div class="screen-meta-box">
-              <span class="screen-file-id">s11.png</span>
-              <h4 class="screen-card-title">Activity Feed &amp; Event Log</h4>
-              <p class="screen-card-desc">Chronological event stream detailing every milestone, rider assignment, and
-                traffic delta explanation.</p>
-              <div class="screen-card-tags">
-                <span class="screen-mini-tag">EVENT LOG</span>
-                <span class="screen-mini-tag">ETA DELTA</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-screen-card">
-            <div class="screen-media-wrap">
-              <img src="s12.png" alt="Calm Waiting Banner" loading="lazy" />
-            </div>
-            <div class="screen-meta-box">
-              <span class="screen-file-id">s12.png</span>
-              <h4 class="screen-card-title">Calm Waiting Bottom Banner</h4>
-              <p class="screen-card-desc">Unobtrusive persistent status banner that allows effortless browsing while
-                keeping track of arrival.</p>
-              <div class="screen-card-tags">
-                <span class="screen-mini-tag">BANNER</span>
-                <span class="screen-mini-tag">PERSISTENT</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Flow 4: Ambient Reassurance States (s7, s8, s9, s13) -->
-      <div class="gallery-flow-block">
-        <div class="gallery-flow-header">
-          <div class="flow-title-group">
-            <span class="flow-pill-step">FLOW 04</span>
-            <h3 class="flow-title">Ambient Moods &amp; Low-Anxiety Reassurance</h3>
-          </div>
-          <span class="flow-count">4 Screens</span>
-        </div>
-
-        <div class="gallery-screen-grid">
 
           <div class="gallery-screen-card">
             <div class="screen-media-wrap">
@@ -1310,6 +1374,21 @@
             </div>
           </div>
 
+        </div>
+      </div>
+
+      <!-- Phase 03: Real-Time Logs + 'Let's Wait' (USP) Distraction (s8, s9, s10, s11) -->
+      <div class="gallery-flow-block">
+        <div class="gallery-flow-header">
+          <div class="flow-title-group">
+            <span class="flow-pill-step">PHASE 03</span>
+            <h3 class="flow-title">Real-Time Logs + "Let's Wait" (USP) Sensory Distraction</h3>
+          </div>
+          <span class="flow-count">4 Screens · s8, s9, s10, s11</span>
+        </div>
+
+        <div class="gallery-screen-grid">
+
           <div class="gallery-screen-card">
             <div class="screen-media-wrap">
               <img src="s8.png" alt="Ambient: In Safe Hands" loading="lazy" />
@@ -1320,8 +1399,8 @@
               <p class="screen-card-desc">Driver hygiene, thermal packaging assurance, and real-time food temperature
                 protection signal.</p>
               <div class="screen-card-tags">
-                <span class="screen-mini-tag">AMBIENT B</span>
                 <span class="screen-mini-tag">SAFETY</span>
+                <span class="screen-mini-tag">HYGIENE</span>
               </div>
             </div>
           </div>
@@ -1336,8 +1415,71 @@
               <p class="screen-card-desc">Explicit instruction that all systems are green and the user doesn't need to
                 babysit the tracker.</p>
               <div class="screen-card-tags">
-                <span class="screen-mini-tag">AMBIENT C</span>
+                <span class="screen-mini-tag">CALM STATE</span>
                 <span class="screen-mini-tag">REASSURANCE</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-screen-card">
+            <div class="screen-media-wrap">
+              <img src="s10.png" alt="Expanded Progress Stepper" loading="lazy" />
+            </div>
+            <div class="screen-meta-box">
+              <span class="screen-file-id">s10.png</span>
+              <h4 class="screen-card-title">Expanded Progress Stepper</h4>
+              <p class="screen-card-desc">Bottom sheet pulled up to reveal full kitchen timestamps, order items, and
+                rider verification card.</p>
+              <div class="screen-card-tags">
+                <span class="screen-mini-tag">STEPPER</span>
+                <span class="screen-mini-tag">TIMESTAMPS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-screen-card">
+            <div class="screen-media-wrap">
+              <img src="s11.png" alt="Activity Feed Expanded" loading="lazy" />
+            </div>
+            <div class="screen-meta-box">
+              <span class="screen-file-id">s11.png</span>
+              <h4 class="screen-card-title">Activity Feed &amp; Event Log</h4>
+              <p class="screen-card-desc">Chronological event stream detailing every milestone, rider assignment, and
+                traffic delta explanation.</p>
+              <div class="screen-card-tags">
+                <span class="screen-mini-tag">EVENT LOG</span>
+                <span class="screen-mini-tag">ETA DELTA</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Phase 04: Accounting & Order Support (s12, s13) -->
+      <div class="gallery-flow-block">
+        <div class="gallery-flow-header">
+          <div class="flow-title-group">
+            <span class="flow-pill-step">PHASE 04</span>
+            <h3 class="flow-title">Accounting &amp; Order Support: Notes, Issues &amp; Multitasking</h3>
+          </div>
+          <span class="flow-count">2 Screens · s12, s13</span>
+        </div>
+
+        <div class="gallery-screen-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 380px));">
+
+          <div class="gallery-screen-card">
+            <div class="screen-media-wrap">
+              <img src="s12.png" alt="Calm Waiting Banner" loading="lazy" />
+            </div>
+            <div class="screen-meta-box">
+              <span class="screen-file-id">s12.png</span>
+              <h4 class="screen-card-title">Calm Waiting Bottom Banner</h4>
+              <p class="screen-card-desc">Unobtrusive persistent status banner that allows effortless browsing while
+                keeping track of arrival.</p>
+              <div class="screen-card-tags">
+                <span class="screen-mini-tag">BANNER</span>
+                <span class="screen-mini-tag">PERSISTENT</span>
               </div>
             </div>
           </div>
@@ -1361,17 +1503,17 @@
         </div>
       </div>
 
-      <!-- Flow 5: Doorstep Delivery & Handover (s14) -->
+      <!-- Phase 05: Final Order Arrives & Handover Closure (s14, 15, 16) -->
       <div class="gallery-flow-block">
         <div class="gallery-flow-header">
           <div class="flow-title-group">
-            <span class="flow-pill-step">FLOW 05</span>
-            <h3 class="flow-title">Doorstep Arrival, Secure PIN &amp; Handover</h3>
+            <span class="flow-pill-step">PHASE 05</span>
+            <h3 class="flow-title">Final Order Arrives: Building Arrival, Verified Delivery &amp; Rating</h3>
           </div>
-          <span class="flow-count">1 Screen</span>
+          <span class="flow-count">3 Screens · s14, 15, 16</span>
         </div>
 
-        <div class="gallery-screen-grid" style="grid-template-columns: minmax(280px, 400px);">
+        <div class="gallery-screen-grid">
 
           <div class="gallery-screen-card">
             <div class="screen-media-wrap">
@@ -1385,7 +1527,38 @@
               <div class="screen-card-tags">
                 <span class="screen-mini-tag">HANDOVER</span>
                 <span class="screen-mini-tag">4-DIGIT PIN</span>
-                <span class="screen-mini-tag">FINAL MILE</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-screen-card">
+            <div class="screen-media-wrap">
+              <img src="15. Delivered copy.png" alt="Verified Order Delivered Screen" loading="lazy" />
+            </div>
+            <div class="screen-meta-box">
+              <span class="screen-file-id">15. Delivered copy.png</span>
+              <h4 class="screen-card-title">Order Delivered Confirmation</h4>
+              <p class="screen-card-desc">Final arrival confirmation with timestamp verification and meal enjoyment
+                message.</p>
+              <div class="screen-card-tags">
+                <span class="screen-mini-tag">DELIVERED</span>
+                <span class="screen-mini-tag">CLOSURE</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-screen-card">
+            <div class="screen-media-wrap">
+              <img src="16. Feedback submitted copy.png" alt="Feedback & Tip Submission" loading="lazy" />
+            </div>
+            <div class="screen-meta-box">
+              <span class="screen-file-id">16. Feedback submitted copy.png</span>
+              <h4 class="screen-card-title">Feedback &amp; Rating Submitted</h4>
+              <p class="screen-card-desc">Instant customer satisfaction capture with rider appreciation and order
+                feedback loops.</p>
+              <div class="screen-card-tags">
+                <span class="screen-mini-tag">FEEDBACK</span>
+                <span class="screen-mini-tag">RETENTION</span>
               </div>
             </div>
           </div>
@@ -1399,13 +1572,13 @@
           <summary>
             <div class="summary-left">
               <span class="summary-pill">FIGMA AUDIT</span>
-              <span>Know more — Complete 14-Screen Technical Dictionary &amp; Metadata</span>
+              <span>Know more — Complete 16-Screen Technical Dictionary &amp; Metadata</span>
             </div>
             <span class="summary-chevron">▾</span>
           </summary>
           <div class="accordion-body-wrap">
             <p class="accordion-intro-p">
-              Index of all 14 screens from the Figma production file with corresponding section roles and UX objectives.
+              Index of all 16 screens from the Figma production file with corresponding section roles and UX objectives.
             </p>
             <div class="tech-table-wrap">
               <table class="tech-table">
@@ -1443,34 +1616,16 @@
                     <td>Instant verification banner &amp; Track CTA</td>
                   </tr>
                   <tr>
-                    <td class="mono-id">s6.png</td>
-                    <td>Live Map Tracking</td>
-                    <td>Active Tracking Core</td>
-                    <td>Vector route polyline + 50% bottom sheet</td>
-                  </tr>
-                  <tr>
                     <td class="mono-id">s5.png</td>
                     <td>Explore More While Waiting</td>
                     <td>Idle Engagement</td>
                     <td>Curated dessert pairings &amp; culinary articles</td>
                   </tr>
                   <tr>
-                    <td class="mono-id">s10.png</td>
-                    <td>Expanded Tracking Detail</td>
-                    <td>Deep Progress Disclosure</td>
-                    <td>5-stage horizontal timeline with timestamps</td>
-                  </tr>
-                  <tr>
-                    <td class="mono-id">s11.png</td>
-                    <td>Activity Feed Expanded</td>
-                    <td>Delay &amp; Event Telemetry</td>
-                    <td>Chronological event stream with delta reasons</td>
-                  </tr>
-                  <tr>
-                    <td class="mono-id">s12.png</td>
-                    <td>Calm Waiting Bottom Banner</td>
-                    <td>Multitasking Mode</td>
-                    <td>Persistent tracking pill during browsing</td>
+                    <td class="mono-id">s6.png</td>
+                    <td>Live Map Tracking</td>
+                    <td>Active Tracking Core</td>
+                    <td>Vector route polyline + 50% bottom sheet</td>
                   </tr>
                   <tr>
                     <td class="mono-id">s7.png</td>
@@ -1491,6 +1646,24 @@
                     <td>Low-cortisol calm state for long waits</td>
                   </tr>
                   <tr>
+                    <td class="mono-id">s10.png</td>
+                    <td>Expanded Tracking Detail</td>
+                    <td>Deep Progress Disclosure</td>
+                    <td>5-stage horizontal timeline with timestamps</td>
+                  </tr>
+                  <tr>
+                    <td class="mono-id">s11.png</td>
+                    <td>Activity Feed Expanded</td>
+                    <td>Delay &amp; Event Telemetry</td>
+                    <td>Chronological event stream with delta reasons</td>
+                  </tr>
+                  <tr>
+                    <td class="mono-id">s12.png</td>
+                    <td>Calm Waiting Bottom Banner</td>
+                    <td>Multitasking Mode</td>
+                    <td>Persistent tracking pill during browsing</td>
+                  </tr>
+                  <tr>
                     <td class="mono-id">s13.png</td>
                     <td>Calm Gradient Mode</td>
                     <td>Night / Relax View</td>
@@ -1501,6 +1674,18 @@
                     <td>Arriving Now with PIN</td>
                     <td>Doorstep Handover</td>
                     <td>High-contrast 4-digit PIN + direct rider line</td>
+                  </tr>
+                  <tr>
+                    <td class="mono-id">15. Delivered copy.png</td>
+                    <td>Order Delivered Confirmation</td>
+                    <td>Delivery Completion</td>
+                    <td>Verified arrival banner &amp; meal enjoyment state</td>
+                  </tr>
+                  <tr>
+                    <td class="mono-id">16. Feedback submitted copy.png</td>
+                    <td>Feedback &amp; Rating Submitted</td>
+                    <td>Post-Delivery Loop</td>
+                    <td>1-tap rider tip &amp; food quality score capture</td>
                   </tr>
                 </tbody>
               </table>
@@ -1513,7 +1698,72 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════════
-       TELLET-STYLE FINAL CTA & FOOTER
+       07. CONCLUSION & STRATEGIC IMPACT (DIRECT FROM REPORT)
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="section-wrap theme-white" id="impact">
+    <div class="container">
+
+      <div class="tellet-sec-header centered">
+        <span class="sec-narrative-tag">07. Conclusion &amp; Strategic Impact.</span>
+        <h2 class="sec-headline">From a "black box" wait into an engaging user journey.</h2>
+        <p class="sec-subtitle">
+          By addressing the psychological friction of the post-purchase phase, Saffron delivers measurable value to both
+          the hungry user and the business across four strategic outcomes.
+        </p>
+      </div>
+
+      <div class="strategic-impact-grid">
+        <div class="impact-card">
+          <span class="impact-tag emerald">OUTCOME 01 · TRUST</span>
+          <h3>Restoring Trust Through Transparency</h3>
+          <p>
+            Replacing static countdowns with predictive, traffic-aware ETAs and granular, timestamped delay logs
+            mathematically
+            validates wait times. This eliminates user speculation and shifts frustration away from the platform during
+            unavoidable delays.
+          </p>
+        </div>
+
+        <div class="impact-card">
+          <span class="impact-tag">OUTCOME 02 · MONETIZATION</span>
+          <h3>Monetizing the Idle State</h3>
+          <p>
+            The integration of the <em>"Explore more while waiting"</em> recommendation carousel capitalizes on a
+            high-intent, captive audience.
+            This provides a clear competitive edge by driving secondary engagement and laying the groundwork for future
+            conversions,
+            all without disrupting the primary live-tracking flow.
+          </p>
+        </div>
+
+        <div class="impact-card">
+          <span class="impact-tag blue">OUTCOME 03 · PSYCHOLOGY</span>
+          <h3>Mitigating Delivery Anxiety</h3>
+          <p>
+            Introducing empathetic micro-interactions, state-preserving <em>"Calm Wait"</em> sensory games, and
+            reassuring interstitial states
+            actively lowers cognitive load. These features reframe the waiting experience from a chore into a seamless
+            extension of the brand's hospitality.
+          </p>
+        </div>
+
+        <div class="impact-card">
+          <span class="impact-tag emerald">OUTCOME 04 · EFFICIENCY</span>
+          <h3>Streamlining Resolution &amp; Support</h3>
+          <p>
+            The modular accounting and support interface ensures users can effortlessly append delivery instructions or
+            report issues
+            directly from the tracking view. This proactive approach reduces user friction and actively decreases the
+            volume of inbound live customer support tickets.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       TELLET-STYLE FINAL CTA & SUBMISSION FOOTER
        ═══════════════════════════════════════════════════════════════════ -->
   <footer class="tellet-footer">
     <div class="container">
@@ -1522,11 +1772,15 @@
       <div class="tellet-cta-band">
         <h2 class="cta-headline">Food delivery tracking.<br />Calmer. Faster. Deeper.</h2>
         <p class="cta-subhead">
-          Explore the complete source code, Figma screen assets, and technical documentation on GitHub.
+          Submission of Design Task on "Food Delivery Order Tracking Screens" by Ananya Agarwal.
         </p>
         <div class="cta-btn-group">
-          <a href="https://github.com/ananyaagarwall/Zeus-delivery-relief" target="_blank" rel="noopener noreferrer"
+          <a href="https://zeus-delivery-relief.vercel.app/" target="_blank" rel="noopener noreferrer"
             class="btn-cta-dark">
+            Hosted Case Study ↗
+          </a>
+          <a href="https://github.com/ananyaagarwall/Zeus-delivery-relief" target="_blank" rel="noopener noreferrer"
+            class="btn-cta-dark" style="background: rgba(13, 31, 26, 0.85);">
             GitHub Repository ↗
           </a>
           <a href="#hero" class="btn-cta-outline">Back to Top ↑</a>
@@ -1536,46 +1790,179 @@
       <!-- Footer Grid -->
       <div class="footer-top-grid">
         <div>
-          <div class="footer-brand-title">saffron.ai</div>
+          <div class="footer-brand-title">saffron · UX study</div>
           <p class="footer-brand-desc">
-            A comprehensive UX case study documenting human-centered food delivery tracking, ETA confidence modeling,
-            and ambient reassurance states.
+            <strong>Designer:</strong> Ananya Agarwal<br />
+            Lokmanya Tilak College of Engineering, Navi Mumbai<br />
+            Email: <a href="mailto:ananyamangal1@gmail.com"
+              style="color: var(--c-orange-brand);">ananyamangal1@gmail.com</a><br />
+            Project Title: Saffron
           </p>
         </div>
 
         <div>
-          <h4 class="footer-col-title">Navigation</h4>
+          <h4 class="footer-col-title">Case Study Sections</h4>
           <ul class="footer-link-list">
-            <li><a href="#hero">Overview</a></li>
-            <li><a href="#research">Research &amp; Insights</a></li>
-            <li><a href="#problem">The Problem Statement</a></li>
-            <li><a href="#solution">Proposed Solution &amp; USP</a></li>
-            <li><a href="#rationale">Design Rationale</a></li>
+            <li><a href="#hero">Overview &amp; Submission Goal</a></li>
+            <li><a href="#research">1. Research &amp; Key Insights</a></li>
+            <li><a href="#problem">2. The Problem Statement</a></li>
+            <li><a href="#solution">3. Proposed Solution &amp; USPs</a></li>
+            <li><a href="#rationale">4. Design Rationale</a></li>
+            <li><a href="#micro">5. Micro-interactions</a></li>
+            <li><a href="#final-mile">Final Mile Handover</a></li>
+            <li><a href="#gallery">6. All 16 Figma Screens</a></li>
+            <li><a href="#impact">7. Conclusion &amp; Strategic Impact</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-col-title">Figma Assets</h4>
+          <h4 class="footer-col-title">Project Deliverables</h4>
           <ul class="footer-link-list">
-            <li><a href="#gallery">All 14 Figma Screens</a></li>
-            <li><a href="#micro">Micro-interactions</a></li>
-            <li><a href="#km-research">Research Matrix</a></li>
-            <li><a href="#km-solution">Feature Comparison</a></li>
+            <li><a href="https://zeus-delivery-relief.vercel.app/" target="_blank" rel="noopener noreferrer">Hosted Case
+                Study URL</a></li>
             <li><a href="https://github.com/ananyaagarwall/Zeus-delivery-relief" target="_blank"
-                rel="noopener noreferrer">GitHub Repo</a></li>
+                rel="noopener noreferrer">GitHub Repository</a></li>
+            <li><a href="#gallery">16 High-Fidelity Screens</a></li>
+            <li><a href="#km-research">Research Matrix Audit</a></li>
+            <li><a href="#km-solution">Feature Comparison Table</a></li>
+            <li><a href="#km-gallery">Technical Dictionary</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom-bar">
-        <span>&copy; 2026 Saffron UX Case Study. Built with narrative and UI inspiration from <a
-            href="https://tellet.ai/" target="_blank" rel="noopener noreferrer">tellet.ai</a>.</span>
-        <span>Repository: <a href="https://github.com/ananyaagarwall/Zeus-delivery-relief" target="_blank"
-            rel="noopener noreferrer">ananyaagarwall/Zeus-delivery-relief</a></span>
+        <span>&copy; 2026 Saffron UX Case Study by <strong>Ananya Agarwal</strong> (Lokmanya Tilak College of
+          Engineering, Navi Mumbai).</span>
+        <span>Hosted: <a href="https://zeus-delivery-relief.vercel.app/" target="_blank"
+            rel="noopener noreferrer">zeus-delivery-relief.vercel.app</a></span>
       </div>
 
     </div>
   </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       INTERACTIVE CYCLING & CAROUSEL SCRIPTS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <script>
+    // ── 1. HERO SLIDESHOW: s1 -> s2 -> s3 -> s4 (every 2.5 seconds) ──
+    (function initHeroSlideshow() {
+      const container = document.getElementById('hero-slideshow');
+      if (!container) return;
+      const slides = container.querySelectorAll('.phone-screen-img');
+      const dotsContainer = document.getElementById('hero-dots');
+      const dots = dotsContainer ? dotsContainer.querySelectorAll('.slideshow-dot') : [];
+      let currentIndex = 0;
+      const total = slides.length;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+        currentIndex = index;
+      }
+
+      let heroInterval = setInterval(() => {
+        showSlide((currentIndex + 1) % total);
+      }, 2500);
+
+      // Interactive click on dots
+      dots.forEach((dot, i) => {
+        dot.style.cursor = 'pointer';
+        dot.addEventListener('click', () => {
+          clearInterval(heroInterval);
+          showSlide(i);
+          heroInterval = setInterval(() => {
+            showSlide((currentIndex + 1) % total);
+          }, 2500);
+        });
+      });
+    })();
+
+    // ── 2. SOLUTION STICKY MOCKUP LOOP: s5 -> s6 -> s7 (every 3.0 seconds) ──
+    (function initSolutionLoop() {
+      const container = document.getElementById('solution-slideshow');
+      const caption = document.getElementById('solution-mockup-caption');
+      if (!container) return;
+      const slides = container.querySelectorAll('.phone-screen-img');
+      const captions = [
+        's5.png · Explore while waiting recommendations',
+        's6.png · Live tracking map & vector route polyline',
+        's7.png · Ambient arrival confidence state'
+      ];
+      let currentIndex = 0;
+      const total = slides.length;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        if (caption && captions[index]) {
+          caption.textContent = captions[index];
+        }
+        currentIndex = index;
+      }
+
+      setInterval(() => {
+        showSlide((currentIndex + 1) % total);
+      }, 3000);
+    })();
+
+    // ── 3. RATIONALE CAROUSEL: s7, s8, s9, s10 WITH SLEEK VISIBLE ARROWS ──
+    (function initRationaleCarousel() {
+      const slidesWrap = document.getElementById('rationale-carousel-slides');
+      if (!slidesWrap) return;
+      const slides = slidesWrap.querySelectorAll('.carousel-slide-img');
+      const infoPanes = document.querySelectorAll('.carousel-slide-info');
+      const pills = document.querySelectorAll('.carousel-step-pill');
+      const prevBtn = document.getElementById('carousel-prev');
+      const nextBtn = document.getElementById('carousel-next');
+      let currentIndex = 0;
+      const total = slides.length;
+
+      function goToSlide(index) {
+        if (index < 0) index = total - 1;
+        if (index >= total) index = 0;
+        currentIndex = index;
+
+        // Toggle slides
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === currentIndex);
+        });
+
+        // Toggle info panes
+        infoPanes.forEach((pane) => {
+          const slideIdx = parseInt(pane.getAttribute('data-slide'), 10);
+          pane.classList.toggle('active', slideIdx === currentIndex);
+        });
+
+        // Toggle pills
+        pills.forEach((pill, i) => {
+          pill.classList.toggle('active', i === currentIndex);
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          goToSlide(currentIndex - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          goToSlide(currentIndex + 1);
+        });
+      }
+
+      pills.forEach((pill, i) => {
+        pill.addEventListener('click', () => {
+          goToSlide(i);
+        });
+      });
+    })();
+  </script>
 
 </body>
 

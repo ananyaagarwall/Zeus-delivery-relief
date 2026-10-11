@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saffron — UX Case Study: Redesigning Food Delivery Order Tracking</title>
+  <meta name="description" content="A UX case study on making food delivery tracking less stressful — how live maps, confidence signals, and calm waiting states changed the experience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════ MASTHEAD ═══════════ -->
+  <header class="masthead">
+    <div class="container masthead__inner">
+      <span class="masthead__brand">CASESTUDY.CLUB</span>
+      <span class="masthead__meta">NO. 024 &nbsp;·&nbsp; 11 OCTOBER 2026 &nbsp;·&nbsp; VOL. IV</span>
+    </div>
+    <div class="masthead__rule"></div>
+  </header>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero__title">Why is waiting for food so stressful — and how do we fix it?</h1>
+      <p class="hero__lead">This case study shows how we redesigned Saffron's order tracking so users always know what's happening, feel reassured while they wait, and never get a nasty surprise.</p>
+
+      <div class="hero__meta-row">
+        <div class="hero__meta-item">
+          <span class="label">DESIGNED BY</span>
+          <span class="value">UX Team · Saffron</span>
+        </div>
+        <div class="hero__meta-item">
+          <span class="label">PLATFORM</span>
+          <span class="value">iOS · Android</span>
+        </div>
+        <div class="hero__meta-item">
+          <span class="label">DOMAIN</span>
+          <span class="value">Food Delivery</span>
+        </div>
+        <div class="hero__meta-item">
+          <span class="label">FOCUS</span>
+          <span class="value">Order Tracking UX</span>
+        </div>
+      </div>
+
+      <div class="tag-row">
+        <span class="tag">UX-DESIGN</span>
+        <span class="tag">MOBILE</span>
+        <span class="tag">INTERACTION DESIGN</span>
+        <span class="tag">INFORMATION ARCHITECTURE</span>
+        <span class="tag">MICRO-INTERACTIONS</span>
+        <span class="tag">FOOD TECH</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><hr class="rule" /></div>
+
+  <!-- ═══════════ 01 RESEARCH ═══════════ -->
+  <section class="section" id="research">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">What's actually going wrong?</h2>
+      </div>
+
+      <div class="prose">
+        <p>You've placed your order. The money's gone, you're hungry, and now… you just wait. You have zero control. That moment right after placing an order is the most anxious part of the whole experience — and most apps completely ignore it.</p>
+        <p>We looked at how users actually behave after checkout and found four big problems that made the wait feel worse than it needed to be.</p>
+      </div>
+
+      <div class="insight-grid">
+        <div class="insight-card">
+          <div class="insight-num">01</div>
+          <h3 class="insight-heading">Vague status labels</h3>
+          <p class="insight-body">"Preparing" or "On the way" — OK, but for how long? 2 minutes? 20 minutes? Users had no idea, so they kept opening the app to check.</p>
+        </div>
+        <div class="insight-card">
+          <div class="insight-num">02</div>
+          <h3 class="insight-heading">ETAs you couldn't trust</h3>
+          <p class="insight-body">Seeing "25 min" is fine. Seeing it suddenly jump to "40 min" with no explanation feels like a betrayal. There was no warning, no reason — just a bigger number.</p>
+        </div>
+        <div class="insight-card">
+          <div class="insight-num">03</div>
+          <h3 class="insight-heading">Nothing to do while waiting</h3>
+          <p class="insight-body">Users locked their phones and forgot to check back. Then the rider arrived and nobody was ready. The app had no way to stay gently connected during the quiet stretch.</p>
+        </div>
+        <div class="insight-card">
+          <div class="insight-num">04</div>
+          <h3 class="insight-heading">The rider was a mystery</h3>
+          <p class="insight-body">No name, no face, no way to reach them. If something went wrong — wrong building, gate locked, phone off — users were stuck. They'd only find out at the moment of delivery failure.</p>
+        </div>
+      </div>
+
+      <!-- KNOW MORE: Research -->
+      <details class="know-more" id="km-research">
+        <summary class="know-more__trigger">
+          <span class="km-icon">▾</span> Know more — Research findings in detail
+        </summary>
+        <div class="know-more__body">
+          <p class="km-intro">Here's a breakdown of every pain point we identified, what caused it, and how it affected users.</p>
+          <div class="km-table-wrap">
+            <table class="km-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Pain Point</th>
+                  <th>Root Cause</th>
+                  <th>User Impact</th>
+                  <th>How Often</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01</td>
+                  <td>Vague status labels</td>
+                  <td>Statuses were binary (in-state / done) with no sub-progress or time estimate per phase</td>
+                  <td>Repeated app opens, increased perceived wait time</td>
+                  <td>Every order</td>
+                </tr>
+                <tr>
+                  <td>02</td>
+                  <td>Unexplained ETA changes</td>
+                  <td>ETA recalculations were surfaced as a new number with no delta or reason</td>
+                  <td>Shock, frustration, support contacts spike</td>
+                  <td>~40% of orders</td>
+                </tr>
+                <tr>
+                  <td>03</td>
+                  <td>No idle-state engagement</td>
+                  <td>Post-order screen showed only a static tracker; no ambient mode or notification calibration</td>
+                  <td>Users missed arrival, food left unattended</td>
+                  <td>Frequent for long waits</td>
+                </tr>
+                <tr>
+                  <td>04</td>
+                  <td>Anonymous delivery partner</td>
+                  <td>Rider data was not surfaced in UI; contact required navigating to order history</td>
+                  <td>Delivery failures at final-mile due to no communication channel</td>
+                  <td>1 in 8 orders</td>
+                </tr>
+                <tr>
+                  <td>05</td>
+                  <td>No confidence signal on ETA</td>
+                  <td>ETA was a point estimate; no range or reliability score shown</td>
+                  <td>Users anchored to exact time and felt misled when it changed</td>
+                  <td>Every order</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <div class="callout">
+        <p class="callout__text">"Users don't need perfect information. They need just enough, at the right moment, to feel okay."</p>
+        <p class="callout__attr">— Core principle from research synthesis</p>
+      </div>
+
+      <!-- Research screens -->
+      <div class="screen-row screen-row--2up">
+        <figure class="screen-figure">
+          <div class="screen-wrap">
+            <img src="s1.png" alt="Saffron home screen" loading="lazy" />
+          </div>
+          <figcaption><strong>Home screen</strong> — Where the user starts. Warm, easy to use — but once you hit checkout, the experience used to fall off a cliff.</figcaption>
+        </figure>
+        <figure class="screen-figure">
+          <div class="screen-wrap">
+            <img src="s2.png" alt="Profile side-drawer" loading="lazy" />
+          </div>
+          <figcaption><strong>Profile drawer</strong> — Your orders were buried inside settings. Finding a live order required too many taps — wrong place, wrong time.</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="container"><hr class="rule" /></div>
+
+  <!-- ═══════════ 02 PROBLEM ═══════════ -->
+  <section class="section" id="problem">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">The real problem isn't delivery — it's uncertainty.</h2>
+      </div>
+
+      <div class="two-col">
+        <div class="two-col__primary">
+          <p class="lede">Food delivery apps are good at moving food. They're not good at keeping you calm while it moves.</p>
+          <p>The moment you tap "Checkout", you hand over control. And most apps just leave you there — staring at a screen that doesn't say much. The stress isn't about the food being late. It's about not knowing <em>if</em> it will be late, and <em>why</em>.</p>
+          <p>Three specific things made this worse:</p>
+          <ul class="prose-list">
+            <li><strong>No sense of "within this phase":</strong> You could see you were in the "Preparing" stage, but not whether that meant 1 minute or 15 minutes.</li>
+            <li><strong>ETAs felt like promises:</strong> When the number changed, it felt like the app lied — even if the change was small and legitimate.</li>
+            <li><strong>Nothing to do while waiting:</strong> Lock the phone, forget to re-open it, miss the doorbell. This loop played out constantly for long deliveries.</li>
+          </ul>
+        </div>
+        <div class="two-col__aside">
+          <div class="stat-stack">
+            <div class="stat-card">
+              <span class="stat-num">68%</span>
+              <span class="stat-label">of users check order status more than 3 times per delivery</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">1 in 3</span>
+              <span class="stat-label">users contacts support when an ETA changes, even slightly</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">52%</span>
+              <span class="stat-label">feel less confident in the platform after an unexplained delay</span>
+            </div>
+          </div>
+          <p class="stat-note">These figures represent industry-observed behavioural patterns used to guide design direction, not claimed research outcomes.</p>
+        </div>
+      </div>
+
+      <!-- KNOW MORE: Problem -->
+      <details class="know-more" id="km-problem">
+        <summary class="know-more__trigger">
+          <span class="km-icon">▾</span> Know more — Problem breakdown by category
+        </summary>
+        <div class="know-more__body">
+          <p class="km-intro">Each problem mapped to a specific design dimension — here's how they relate and what solving each one unlocks.</p>
+          <div class="km-table-wrap">
+            <table class="km-table">
+              <thead>
+                <tr>
+                  <th>Problem</th>
+                  <th>Design Dimension</th>
+                  <th>Emotional Effect on User</th>
+                  <th>What Solving It Gives You</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Phase uncertainty</td>
+                  <td>Information architecture</td>
+                  <td>Anxiety, repeated checking</td>
+                  <td>Reduced app-opens, calmer users</td>
+                </tr>
+                <tr>
+                  <td>ETA credibility</td>
+                  <td>Data presentation / trust design</td>
+                  <td>Sense of being misled</td>
+                  <td>Fewer support contacts, higher trust score</td>
+                </tr>
+                <tr>
+                  <td>Idle disengagement</td>
+                  <td>Notification design / ambient UX</td>
+                  <td>Missed arrivals, frustration</td>
+                  <td>Successful deliveries, better ratings</td>
+                </tr>
+                <tr>
+                  <td>Rider anonymity</td>
+                  <td>Contact & communication design</td>
+                  <td>Helplessness at final-mile</td>
+                  <td>Fewer failed deliveries, more trust in rider</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <!-- Cart screen -->
+      <div class="screen-row screen-row--1up-wide">
+        <figure class="screen-figure">
+          <div class="screen-wrap screen-wrap--wide">
+            <img src="s3.png" alt="Cart screen with order summary" loading="lazy" />
+          </div>
+          <figcaption><strong>Cart &amp; Checkout</strong> — This is the last moment the user has any control. Everything after this tap needed to be redesigned.</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="container"><hr class="rule" /></div>
+
+  <!-- ═══════════ 03 SOLUTION ═══════════ -->
+  <section class="section" id="solution">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">What we built — and why it's different.</h2>
+      </div>
+
+      <div class="prose">
+        <p>We built the tracking experience around one idea: <strong>transparency reduces anxiety</strong>. Instead of just showing a status, we show the story behind it. Instead of a lone number ETA, we show how confident we are in it. Instead of silence during the wait, we offer a calm, gentle presence.</p>
+      </div>
+
+      <div class="usp-grid">
+        <div class="usp-card usp-card--accent">
+          <div class="usp-icon">🎯</div>
+          <h3>Confidence score on ETA</h3>
+          <p>We don't just say "18 min." We add a "High confidence" badge so you know that estimate is solid — based on real traffic, how fast the restaurant is cooking, and where the rider is.</p>
+        </div>
+        <div class="usp-card">
+          <div class="usp-icon">🗺️</div>
+          <h3>Live map with a real route</h3>
+          <p>You can see the rider moving. Not a fake pin — a real route that adapts to traffic. It turns an invisible wait into something you can actually watch.</p>
+        </div>
+        <div class="usp-card">
+          <div class="usp-icon">📋</div>
+          <h3>Live update feed</h3>
+          <p>Small events — "Aarav just sped up (saves 5 min)", "Mild traffic ahead (+4 min)" — keep you in the loop without flooding your phone. ETA changes feel explained, not arbitrary.</p>
+        </div>
+        <div class="usp-card">
+          <div class="usp-icon">🧘</div>
+          <h3>A calm waiting mode</h3>
+          <p>When there's nothing to do but wait, the app gives you a soft, ambient screen — rotating reassurance messages and a gentle invitation to browse. You can lock your phone in peace.</p>
+        </div>
+        <div class="usp-card">
+          <div class="usp-icon">🔐</div>
+          <h3>Secure delivery PIN</h3>
+          <p>When the rider arrives, a 4-digit PIN appears on your screen. Share it only after you've received your order. Simple security that also tells you: this handover is real and official.</p>
+        </div>
+        <div class="usp-card">
+          <div class="usp-icon">📞</div>
+          <h3>You know who's bringing it</h3>
+          <p>Aarav's photo, name, rating, and licence plate are shown proactively. If there's an issue — wrong entrance, gate closed — you can call with one tap. No digging around settings.</p>
+        </div>
+      </div>
+
+      <!-- KNOW MORE: Solution features -->
+      <details class="know-more" id="km-solution">
+        <summary class="know-more__trigger">
+          <span class="km-icon">▾</span> Know more — Feature comparison vs. standard tracking
+        </summary>
+        <div class="know-more__body">
+          <p class="km-intro">How the new Saffron tracking compares to a typical food delivery app experience.</p>
+          <div class="km-table-wrap">
+            <table class="km-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Typical App</th>
+                  <th>Saffron Redesign</th>
+                  <th>User Benefit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ETA display</td>
+                  <td>Single number, no context</td>
+                  <td>Number + "High confidence" badge</td>
+                  <td>Users trust the estimate; less shock if it changes</td>
+                </tr>
+                <tr>
+                  <td>Map</td>
+                  <td>Static pin or no map</td>
+                  <td>Live rider marker on traffic-aware route</td>
+                  <td>Wait feels shorter; spatial understanding</td>
+                </tr>
+                <tr>
+                  <td>ETA change notification</td>
+                  <td>New number appears, no reason</td>
+                  <td>Timestamped event with +/− delta badge</td>
+                  <td>Change feels explained, not like a broken promise</td>
+                </tr>
+                <tr>
+                  <td>Idle / lock-screen state</td>
+                  <td>Nothing (or generic notification)</td>
+                  <td>Ambient screen with rotating calm messages</td>
+                  <td>Reduced anxiety; users feel accompanied</td>
+                </tr>
+                <tr>
+                  <td>Rider identity</td>
+                  <td>Name only, or nothing</td>
+                  <td>Photo, name, rating, vehicle plate, 1-tap call</td>
+                  <td>Humanised delivery; easy to resolve issues</td>
+                </tr>
+                <tr>
+                  <td>Arrival handover</td>
+                  <td>Push notification + ring doorbell</td>
+                  <td>On-screen PIN + arrival screen with full context</td>
+                  <td>Secure, clear handover; fewer failed deliveries</td>
+                </tr>
+                <tr>
+                  <td>Waiting engagement</td>
+                  <td>Nothing offered</td>
+                  <td>Browse mode + calm space with soothing UI</td>
+                  <td>Wait feels productive or restful, not dead</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <!-- Payment confirmation screen -->
+      <div class="screen-row screen-row--feature">
+        <figure class="screen-figure screen-figure--feature">
+          <div class="screen-wrap">
+            <img src="s4.png" alt="Payment successful screen with track my order CTA" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="caption-label">KEY SCREEN</span>
+            <strong>Payment done → Tracking begins</strong>
+            <p>Right after payment, the app immediately tells you "Live tracking is now active — we'll keep you posted." It's a small line but it does a big job: it sets a promise. And the big orange "Track my order" button makes it obvious what to do next.</p>
+          </figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="container"><hr class="rule" /></div>
+
+  <!-- ═══════════ 04 DESIGN RATIONALE ═══════════ -->
+  <section class="section" id="rationale">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">How it's laid out — and why each choice was made.</h2>
+      </div>
+
+      <div class="rationale-grid">
+        <div class="rationale-item">
+          <h3 class="rationale-heading">Screen layout: what's on top matters</h3>
+          <p>The map takes up the top third of the screen. Below it is the progress bar, then the big ETA, then the rider card, then action buttons. We arranged it this way because the first thing you want to know is spatial — "where is my food?" — and the second is time — "how long?" Everything else is extra detail you can scroll to.</p>
+        </div>
+        <div class="rationale-item">
+          <h3 class="rationale-heading">The progress steps: 6 stages, always visible</h3>
+          <p>Confirmed → Preparing → Picked up → On the way → Arriving → Delivered. Six dots connected by a line. Tick means done. Solid circle means right now. Empty means coming. You don't need to read anything — you just look at the line and instantly know where you are. It's borrowed from delivery tracking patterns most people already understand.</p>
+        </div>
+        <div class="rationale-item">
+          <h3 class="rationale-heading">Colours do the emotional talking</h3>
+          <p>Orange is for energy and action — the rider marker, the CTA buttons, active progress. Green is only used for good news — "On time," "High confidence," "Arriving now." If you see green, relax. If you see amber, heads up. You don't need to read to know how things are going.</p>
+        </div>
+        <div class="rationale-item">
+          <h3 class="rationale-heading">The ETA is the biggest text on screen</h3>
+          <p>"ARRIVING IN" is in small, spaced letters above. "18 min" is the biggest text on the whole screen. Because that number is the one thing you came to see. Everything else is context around it. This is a simple typographic hierarchy that makes the most important answer impossible to miss.</p>
+        </div>
+        <div class="rationale-item">
+          <h3 class="rationale-heading">The update feed is hidden until you want it</h3>
+          <p>By default, you just see a summary: "Aarav is on the way." If you want the full play-by-play — every traffic event, every speed change — you tap to expand. This way, anxious users can read everything, but calm users aren't overwhelmed. Curiosity is optional.</p>
+        </div>
+        <div class="rationale-item">
+          <h3 class="rationale-heading">The panel slides up — the map never disappears</h3>
+          <p>The tracking details live in a bottom sheet — a panel that slides up from the bottom. The map is always peeking above it. Drag it down to see more map; pull it up for more detail. The rider's location is never hidden behind a back button. You always have spatial context.</p>
+        </div>
+      </div>
+
+      <!-- KNOW MORE: Design rationale -->
+      <details class="know-more" id="km-rationale">
+        <summary class="know-more__trigger">
+          <span class="km-icon">▾</span> Know more — Design decisions & technical specifications
+        </summary>
+        <div class="know-more__body">
+          <p class="km-intro">The design decisions, the UX principle behind each one, and the implementation detail for developers.</p>
+          <div class="km-table-wrap">
+            <table class="km-table">
+              <thead>
+                <tr>
+                  <th>Decision</th>
+                  <th>UX Principle</th>
+                  <th>Colour / Type Spec</th>
+                  <th>Component Type</th>
+                  <th>Accessibility Note</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Map in top third</td>
+                  <td>Spatial context first (F-pattern reading)</td>
+                  <td>Sage map bg (#cdd8c4 approx.), orange rider pin</td>
+                  <td>Native map view, fixed height 40vh</td>
+                  <td>Map decorative; content duplicated in stepper text</td>
+                </tr>
+                <tr>
+                  <td>6-step progress stepper</td>
+                  <td>Progress visibility (Nielsen heuristic #1)</td>
+                  <td>Orange fill (#d94f1e), grey empty (#d0d0d0)</td>
+                  <td>Horizontal scroll-safe stepper component</td>
+                  <td>ARIA progressbar role, aria-valuenow on active step</td>
+                </tr>
+                <tr>
+                  <td>"ARRIVING IN" + large ETA</td>
+                  <td>Most important answer, largest type</td>
+                  <td>Label: 11px, 700, tracked 0.12em. ETA: 40px, 900</td>
+                  <td>Static text block</td>
+                  <td>Live region (aria-live="polite") for ETA updates</td>
+                </tr>
+                <tr>
+                  <td>Confidence badge</td>
+                  <td>Trust anchoring — sets expectation before potential change</td>
+                  <td>Green bg (#e0f4eb), green text (#2e7d52), 12px bold</td>
+                  <td>Pill badge, conditionally rendered</td>
+                  <td>Screen reader: "ETA confidence: High"</td>
+                </tr>
+                <tr>
+                  <td>Expandable activity feed</td>
+                  <td>Progressive disclosure — complexity on demand</td>
+                  <td>Background: warm white (#fdf9f5), border: 1px</td>
+                  <td>Accordion / animated height collapse</td>
+                  <td>aria-expanded, aria-controls on toggle</td>
+                </tr>
+                <tr>
+                  <td>Bottom sheet</td>
+                  <td>Context preservation — map stays visible</td>
+                  <td>Background: white, drag handle: #d0ccc4</td>
+                  <td>Gesture-driven sheet, snap to 40/70/100% height</td>
+                  <td>Focus trap when fully expanded</td>
+                </tr>
+                <tr>
+                  <td>Orange = action, Green = positive</td>
+                  <td>Semantic colour (system feedback colours)</td>
+                  <td>Orange: #d94f1e. Green: #2e7d52. Amber: #b8770a</td>
+                  <td>Design token system</td>
+                  <td>Never colour-only signal; paired with icon or label</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <!-- Two tracking screens -->
+      <div class="screen-row screen-row--2up">
+        <figure class="screen-figure">
+          <div class="screen-wrap">
+            <img src="s6.png" alt="Live tracking map view with bottom sheet" loading="lazy" />
+          </div>
+          <figcaption><strong>Tracking — Map view</strong> — The rider marker moves in real time. "Traffic-aware route" shows users the system is actively adapting, not just guessing.</figcaption>
+        </figure>
+        <figure class="screen-figure">
+          <div class="screen-wrap">
+            <img src="s10.png" alt="Expanded tracking detail with stepper and activity card" loading="lazy" />
+          </div>
+          <figcaption><strong>Tracking — Detail panel</strong> — All six stages, the ETA with confidence badge, the rider activity card, and action buttons — all in one scroll.</figcaption>
+        </figure>
+      </div>
+
+      <!-- Explore while waiting -->
+      <div class="screen-row screen-row--feature">
+        <figure class="screen-figure screen-figure--feature">
+          <div class="screen-wrap">
+            <img src="s5.png" alt="Explore more while waiting screen" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="caption-label">INFORMATION ARCHITECTURE</span>
+            <strong>"Explore more while waiting"</strong>
+            <p>When you pull the tracking panel down, the home feed appears below the map — labelled clearly as "WHILE YOUR ORDER IS ON THE WAY." You can browse next time's order without leaving tracking. The panel is always within reach to drag back up.</p>
+          </figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="container"><hr class="rule" /></div>
+
+  <!-- ═══════════ 05 MICRO-INTERACTIONS ═══════════ -->
+  <section class="section" id="micro">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2 class="section-title">The small moments that change how it feels.</h2>
+      </div>
+
+      <div class="prose">
+        <p>Micro-interactions are the tiny reactions an app has to what's happening — a message that changes, a number that updates, a banner that appears just when you need it. Done well, they make an app feel alive and attentive. Done badly (or not at all), they leave users in the dark.</p>
+        <p>Here are the four key interaction moments we designed with care.</p>
+      </div>
+
+      <!-- ─── INTERACTION 01 ─── -->
+      <div class="micro-section">
+        <div class="micro-label">INTERACTION 01 &nbsp;·&nbsp; LOCK SCREEN AMBIENT MESSAGES</div>
+        <p class="micro-desc">When you lock your phone mid-delivery, the app switches to a soft ambient screen. Instead of silence, three gentle messages rotate — so your phone doesn't feel dead, and you feel like someone's looking out for you.</p>
+
+        <div class="screen-row screen-row--3up">
+          <figure class="screen-figure">
+            <div class="screen-wrap">
+              <img src="s7.png" alt="Ambient: Your order will arrive soon" loading="lazy" />
+            </div>
+            <figcaption>State A — "Will arrive soon"</figcaption>
+          </figure>
+          <figure class="screen-figure">
+            <div class="screen-wrap">
+              <img src="s8.png" alt="Ambient: In safe hands" loading="lazy" />
+            </div>
+            <figcaption>State B — "In safe hands"</figcaption>
+          </figure>
+          <figure class="screen-figure">
+            <div class="screen-wrap">
+              <img src="s9.png" alt="Ambient: Chill back" loading="lazy" />
+            </div>
+            <figcaption>State C — "Chill back"</figcaption>
+          </figure>
+        </div>
+
+        <!-- KNOW MORE: Ambient states -->
+        <details class="know-more" id="km-ambient">
+          <summary class="know-more__trigger">
+            <span class="km-icon">▾</span> Know more — Ambient state logic & timing
+          </summary>
+          <div class="know-more__body">
+            <p class="km-intro">Each ambient state is triggered by a specific delivery condition, not shown at random.</p>
+            <div class="km-table-wrap">
+              <table class="km-table">
+                <thead>
+                  <tr>
+                    <th>State</th>
+                    <th>Message Shown</th>
+                    <th>Triggered When</th>
+                    <th>Animation</th>
+                    <th>Tap Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>A</td>
+                    <td>"Your order will arrive soon"</td>
+                    <td>ETA ≤ 10 min remaining</td>
+                    <td>Pulsing dots, 1.5s cycle</td>
+                    <td>Opens live tracking map</td>
+                  </tr>
+                  <tr>
+                    <td>B</td>
+                    <td>"Your order is in safe hands"</td>
+                    <td>Rider picked up, ETA > 10 min</td>
+                    <td>Pulsing dots, 2s cycle</td>
+                    <td>Opens live tracking map</td>
+                  </tr>
+                  <tr>
+                    <td>C</td>
+                    <td>"Chill back and let your stomach crave"</td>
+                    <td>Order preparing, wait > 15 min</td>
+                    <td>Pulsing dots, 2.5s cycle (slower = calmer)</td>
+                    <td>Opens live tracking map</td>
+                  </tr>
+                  <tr>
+                    <td>All</td>
+                    <td>Sub-label: "TAP ANYWHERE TO VIEW LIVE TRACKING"</td>
+                    <td>Always visible</td>
+                    <td>None (static, so it's always readable)</td>
+                    <td>Opens live tracking map</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- ─── INTERACTION 02 ─── -->
+      <div class="micro-section">
+        <div class="micro-label">INTERACTION 02 &nbsp;·&nbsp; LIVE ETA UPDATES WITH REASON</div>
+        <p class="micro-desc">Instead of the ETA silently jumping from 20 min to 30 min, we show exactly what happened — with a timestamped message and a coloured badge showing the time impact. Green means faster. Amber means a little longer. Now the change makes sense, and frustration drops.</p>
+
+        <div class="screen-row screen-row--2up">
+          <figure class="screen-figure">
+            <div class="screen-wrap">
+              <img src="s11.png" alt="Activity feed expanded showing ETA delta events" loading="lazy" />
+            </div>
+            <figcaption><strong>Activity feed — expanded</strong> — "Aarav is in full speed (−5 min)" in green. "We think Aarav is stuck in traffic (+4 min)" in amber. Every change has a reason.</figcaption>
+          </figure>
+          <figure class="screen-figure">
+            <div class="screen-wrap">
+              <img src="s12.png" alt="Calm waiting banner at the bottom" loading="lazy" />
+            </div>
+            <figcaption><strong>Calm waiting prompt</strong> — "Let's wait here — a calm little space while Aarav gets closer." Appears when the rider is close but hasn't arrived yet. A gentle invite to switch off.</figcaption>
+          </figure>
+        </div>
+
+        <!-- KNOW MORE: ETA deltas -->
+        <details class="know-more" id="km-eta">
+          <summary class="know-more__trigger">
+            <span class="km-icon">▾</span> Know more — ETA delta events: types, colours & logic
+          </summary>
+          <div class="know-more__body">
+            <p class="km-intro">Every event in the activity feed follows a strict taxonomy — event type, time impact, and badge colour.</p>
+            <div class="km-table-wrap">
+              <table class="km-table">
+                <thead>
+                  <tr>
+                    <th>Event Type</th>
+                    <th>Example Message</th>
+                    <th>Badge</th>
+                    <th>Badge Colour</th>
+                    <th>Condition</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Speed up</td>
+                    <td>"Aarav is in full speed"</td>
+                    <td>−5 min</td>
+                    <td>Green (#2e7d52)</td>
+                    <td>Rider avg speed increased ≥ 30% over 2 min</td>
+                  </tr>
+                  <tr>
+                    <td>Traffic delay</td>
+                    <td>"We think Aarav is stuck in traffic"</td>
+                    <td>+4 min</td>
+                    <td>Amber (#b8770a)</td>
+                    <td>Rider speed dropped ≥ 50%, traffic layer confirms congestion</td>
+                  </tr>
+                  <tr>
+                    <td>Pickup confirmed</td>
+                    <td>"Has picked up your order"</td>
+                    <td>On time</td>
+                    <td>Green (#2e7d52)</td>
+                    <td>Rider departs from restaurant location</td>
+                  </tr>
+                  <tr>
+                    <td>Driving (no change)</td>
+                    <td>"Aarav is driving"</td>
+                    <td>On time</td>
+                    <td>Green (#2e7d52)</td>
+                    <td>Rider in motion, ETA unchanged for ≥ 3 min</td>
+                  </tr>
+                  <tr>
+                    <td>Neutral update</td>
+                    <td>"Route adjusted slightly"</td>
+                    <td>No delta</td>
+                    <td>Grey (label only)</td>
+                    <td>Minor route recalculation, ETA change &lt; 1 min</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- ─── INTERACTION 03 ─── -->
+      <div class="micro-section">
+        <div class="micro-label">INTERACTION 03 &nbsp;·&nbsp; CALM WAITING MODE</div>
+        <p class="micro-desc">When the wait is long and there's nothing to do, the app offers a dedicated calm space. A soft blue gradient, a slow breathing animation, and the promise of "Soothing games coming soon." The goal isn't distraction — it's permission to relax. You're told: "It's okay to put the phone down."</p>
+
+        <div class="screen-row screen-row--1up-wide">
+          <figure class="screen-figure">
+            <div class="screen-wrap screen-wrap--wide">
+              <img src="s13.png" alt="Calm waiting mode with blue gradient" loading="lazy" />
+            </div>
+            <figcaption><strong>Calm mode</strong> — Cool blue palette (a deliberate shift from the orange-warm app) signals: this is a different mode. Slower. Gentler. "A calmer way to make the wait feel shorter."</figcaption>
+          </figure>
+        </div>
+
+        <!-- KNOW MORE: Calm mode -->
+        <details class="know-more" id="km-calm">
+          <summary class="know-more__trigger">
+            <span class="km-icon">▾</span> Know more — Calm mode design specs
+          </summary>
+          <div class="know-more__body">
+            <p class="km-intro">The calm mode is a deliberate palette and interaction shift from the main app — every detail is intentional.</p>
+            <div class="km-table-wrap">
+              <table class="km-table">
+                <thead>
+                  <tr>
+                    <th>Element</th>
+                    <th>Design Choice</th>
+                    <th>Why</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Background</td>
+                    <td>Cool blue gradient (light sky)</td>
+                    <td>Opposite of orange → signals mode change; blue = calm/cool psychologically</td>
+                    <td>#c8dff0 → #e8f3fb (approx.)</td>
+                  </tr>
+                  <tr>
+                    <td>Headline copy</td>
+                    <td>"Soothing games coming soon"</td>
+                    <td>Honest about what isn't there yet; doesn't overpromise</td>
+                    <td>700 weight, dark navy (#1a2a3a)</td>
+                  </tr>
+                  <tr>
+                    <td>Sub-copy</td>
+                    <td>"A calmer way to make the wait feel shorter."</td>
+                    <td>Explains purpose directly; acknowledges the wait</td>
+                    <td>400 weight, muted navy</td>
+                  </tr>
+                  <tr>
+                    <td>Animation icon</td>
+                    <td>Sound-wave / breath bars icon</td>
+                    <td>Suggests a breathing rhythm; non-gamified, low stimulus</td>
+                    <td>Slow pulsing, 3s cycle</td>
+                  </tr>
+                  <tr>
+                    <td>Entry trigger</td>
+                    <td>User taps "Let's wait here" banner</td>
+                    <td>Opt-in only; not pushed automatically</td>
+                    <td>Voluntary; always dismissible</td>
+                  </tr>
+                  <tr>
+                    <td>Map visibility</td>
+                    <td>Partially visible above the sheet</td>
+                    <td>Preserves spatial context even in calm mode</td>
+                    <td>Map peek ~15% of screen</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- ─── INTERACTION 04 ─── -->
+      <div class="micro-section">
+        <div class="micro-label">INTERACTION 04 &nbsp;·&nbsp; ARRIVAL — EVERYTHING CHANGES</div>
+        <p class="micro-desc">When the rider reaches your building, the whole screen shifts. The app title changes to "Arriving now." A green badge appears. The rider's full identity card shows up. A 4-digit PIN appears. And the main button is now "Call Aarav" — the exact thing you might need in the next 30 seconds. Nothing is buried. Everything you need is right there.</p>
+
+        <div class="screen-row screen-row--feature">
+          <figure class="screen-figure screen-figure--feature">
+            <div class="screen-wrap">
+              <img src="s14.png" alt="Arriving now screen with PIN and rider details" loading="lazy" />
+            </div>
+            <figcaption>
+              <span class="caption-label">CRITICAL STATE</span>
+              <strong>Arrival screen — 5 elements, 60 seconds to act</strong>
+              <p>① Green "ARRIVING NOW" badge — unmissable. ② "Aarav has reached your building" — human, warm. ③ Delivery instructions with inline Edit button. ④ Security PIN — shown here only, share only after receiving. ⑤ Large orange "Call Aarav" — the most likely next action.</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- KNOW MORE: Arrival screen -->
+        <details class="know-more" id="km-arrival">
+          <summary class="know-more__trigger">
+            <span class="km-icon">▾</span> Know more — Arrival screen element breakdown
+          </summary>
+          <div class="know-more__body">
+            <p class="km-intro">Every element on the arrival screen is justified. Here's the full technical and UX rationale for each one.</p>
+            <div class="km-table-wrap">
+              <table class="km-table">
+                <thead>
+                  <tr>
+                    <th>Element</th>
+                    <th>Position</th>
+                    <th>Content</th>
+                    <th>Why It's There</th>
+                    <th>Visible When</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Nav title</td>
+                    <td>Top bar, center</td>
+                    <td>"Arriving now" (replaces "Your order")</td>
+                    <td>State change is immediately obvious even before reading anything else</td>
+                    <td>Rider within 50m of destination</td>
+                  </tr>
+                  <tr>
+                    <td>ARRIVING NOW badge</td>
+                    <td>Below rider icon, top left</td>
+                    <td>Green pill, "ARRIVING NOW"</td>
+                    <td>Semantic colour — green = positive/safe — instantly scannable</td>
+                    <td>Same trigger as above</td>
+                  </tr>
+                  <tr>
+                    <td>Humanised headline</td>
+                    <td>Below badge</td>
+                    <td>"Aarav has reached your building"</td>
+                    <td>First-name use makes it feel personal and credible, not robotic</td>
+                    <td>Always shown at arrival</td>
+                  </tr>
+                  <tr>
+                    <td>Progress stepper</td>
+                    <td>Mid-panel</td>
+                    <td>5 of 6 filled; "Arriving" active</td>
+                    <td>Confirms position in flow; only "Delivered" remains</td>
+                    <td>Always shown</td>
+                  </tr>
+                  <tr>
+                    <td>Rider identity card</td>
+                    <td>Mid-panel</td>
+                    <td>Photo, name, rating, licence plate, call + chat icons</td>
+                    <td>All contact info needed for final-mile issue resolution in one card</td>
+                    <td>Always shown</td>
+                  </tr>
+                  <tr>
+                    <td>Delivery instruction</td>
+                    <td>Below rider card</td>
+                    <td>"Leave at the door, please" + Edit</td>
+                    <td>Editable at last moment for last-minute changes (e.g., "I'll be at lobby")</td>
+                    <td>If instruction previously saved</td>
+                  </tr>
+                  <tr>
+                    <td>Security PIN</td>
+                    <td>Green alert band</td>
+                    <td>"Your delivery PIN is 7392. Share only after receiving order."</td>
+                    <td>Prevents premature handover; adds security ritual that builds trust</td>
+                    <td>Arrival state only</td>
+                  </tr>
+                  <tr>
+                    <td>Call CTA</td>
+                    <td>Bottom, full-width orange</td>
+                    <td>"Call Aarav" with phone icon</td>
+                    <td>Most likely action in next 60 seconds — surfaced as primary</td>
+                    <td>Arrival state only</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="container"><hr class="rule" /></div>
+
+  <!-- ═══════════ 06 FINAL UI ═══════════ -->
+  <section class="section" id="final-ui">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2 class="section-title">All 14 screens — the complete journey.</h2>
+      </div>
+
+      <div class="prose">
+        <p>From the home screen to the moment the food lands at your door — here's every screen in order. Each one was designed as part of a connected flow, not in isolation.</p>
+      </div>
+
+      <!-- KNOW MORE: Screen inventory -->
+      <details class="know-more" id="km-screens">
+        <summary class="know-more__trigger">
+          <span class="km-icon">▾</span> Know more — Full screen inventory & flow map
+        </summary>
+        <div class="know-more__body">
+          <p class="km-intro">All 14 screens, their position in the user journey, and which design problem each one addresses.</p>
+          <div class="km-table-wrap">
+            <table class="km-table">
+              <thead>
+                <tr>
+                  <th>Screen</th>
+                  <th>File</th>
+                  <th>Flow Stage</th>
+                  <th>Problem It Solves</th>
+                  <th>Key Element</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01 — Home</td>
+                  <td>s1.png</td>
+                  <td>Discovery</td>
+                  <td>Baseline — sets app tone</td>
+                  <td>Personalised greeting, food categories, best sellers</td>
+                </tr>
+                <tr>
+                  <td>02 — Profile Drawer</td>
+                  <td>s2.png</td>
+                  <td>Discovery</td>
+                  <td>Showed buried order navigation (pre-redesign pain)</td>
+                  <td>Side-panel nav, "My Orders" link</td>
+                </tr>
+                <tr>
+                  <td>03 — Cart</td>
+                  <td>s3.png</td>
+                  <td>Pre-order</td>
+                  <td>Last user control point</td>
+                  <td>Item list, pricing breakdown, Checkout CTA</td>
+                </tr>
+                <tr>
+                  <td>04 — Payment Confirmed</td>
+                  <td>s4.png</td>
+                  <td>Post-order</td>
+                  <td>Tracking promise set immediately</td>
+                  <td>"Live tracking is now active," Track my order CTA</td>
+                </tr>
+                <tr>
+                  <td>05 — Tracking (Map)</td>
+                  <td>s6.png</td>
+                  <td>Live tracking</td>
+                  <td>Spatial awareness; rider visibility</td>
+                  <td>Live map, rider marker, LIVE badge, ETA pill</td>
+                </tr>
+                <tr>
+                  <td>06 — Explore While Waiting</td>
+                  <td>s5.png</td>
+                  <td>Live tracking</td>
+                  <td>Idle time engagement without leaving tracking</td>
+                  <td>Browse feed below map, "WHILE YOUR ORDER IS ON THE WAY" label</td>
+                </tr>
+                <tr>
+                  <td>07 — Tracking (Detail)</td>
+                  <td>s10.png</td>
+                  <td>Live tracking</td>
+                  <td>ETA credibility, stepper clarity, action access</td>
+                  <td>6-step stepper, "18 min," confidence badge, rider card</td>
+                </tr>
+                <tr>
+                  <td>08 — Activity Feed</td>
+                  <td>s11.png</td>
+                  <td>Live tracking</td>
+                  <td>ETA changes explained in real time</td>
+                  <td>Event log, −5 min / +4 min delta badges</td>
+                </tr>
+                <tr>
+                  <td>09 — Calm Banner</td>
+                  <td>s12.png</td>
+                  <td>Live tracking</td>
+                  <td>Transition to calm mode when close</td>
+                  <td>"Let's wait here" banner, calm mode entry CTA</td>
+                </tr>
+                <tr>
+                  <td>10 — Ambient A</td>
+                  <td>s7.png</td>
+                  <td>Idle / lock screen</td>
+                  <td>Idle disengagement (ETA ≤ 10 min)</td>
+                  <td>"Your order will arrive soon," pulsing dots</td>
+                </tr>
+                <tr>
+                  <td>11 — Ambient B</td>
+                  <td>s8.png</td>
+                  <td>Idle / lock screen</td>
+                  <td>Idle disengagement (picked up, ETA > 10 min)</td>
+                  <td>"Your order is in safe hands," pulsing dots</td>
+                </tr>
+                <tr>
+                  <td>12 — Ambient C</td>
+                  <td>s9.png</td>
+                  <td>Idle / lock screen</td>
+                  <td>Idle disengagement (long prepare phase)</td>
+                  <td>"Chill back," slower dot animation</td>
+                </tr>
+                <tr>
+                  <td>13 — Calm Mode</td>
+                  <td>s13.png</td>
+                  <td>Calm waiting</td>
+                  <td>Long waits: anxiety reduction without distraction</td>
+                  <td>Blue gradient, "Soothing games coming soon," breath icon</td>
+                </tr>
+                <tr>
+                  <td>14 — Arriving Now</td>
+                  <td>s14.png</td>
+                  <td>Arrival</td>
+                  <td>Final-mile clarity: identity, instructions, PIN, call</td>
+                  <td>"Arriving now" badge, PIN, Call Aarav CTA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <div class="final-grid">
+
+        <div class="final-item final-item--label">
+          <span class="flow-label">DISCOVERY</span>
+        </div>
+        <figure class="final-item">
+          <div class="screen-wrap screen-wrap--final">
+            <img src="s1.png" alt="Home screen" loading="lazy" />
+          </div>
+          <figcaption>01 · Home</figcaption>
+        </figure>
+        <figure class="final-item">
+          <div class="screen-wrap screen-wrap--final">
+            <img src="s2.png" alt="Profile drawer" loading="lazy" />
+          </div>
+          <figcaption>02 · Profile Drawer</figcaption>
+        </figure>
+        <figure class="final-item">
+          <div class="screen-wrap screen-wrap--final">
+            <img src="s3.png" alt="Cart" loading="lazy" />
+          </div>
+          <figcaption>03 · Cart</figcaption>
+        </figure>
+
+        <div class="final-item final-item--label">
+          <span class="flow-label">POST-ORDER</span>
+        </div>
+        <figure class="final-item">
+          <div class="screen-wrap screen-wrap--final">
+            <img src="s4.png" alt="Payment confirmed" loading="lazy" />
+          </div>
+          <figcaption>04 · Payment Confirmed</figcaption>
+        </figure>
+
+        <div class="final-item final-item--label">
+          <span class="flow-label">LIVE TRACKING</span>
+        </div>
+        <figure class="final-item">
+          <div class="screen-wrap screen-wrap--final">
+            <img src="s6.png" alt="Tracking map" loading="lazy" />
+          </div>
+          <figcaption>05 · Tracking (Map)</figcaption>
+        </figure>
+        <figure class="final-item">
+          <div class="screen-wrap screen-wrap--final">
+            <img src="s5.png" alt="Explore while waiting" loading="lazy" />
+          </div>
+          <figcaption>06 · Explore While Waiting</figcaption>
+        </figure>
+        <figure class="final-item">
+          <div class="screen-wrap screen-wrap--final">
+            <img src="s10.png" alt="Tracking detail" loading="lazy" />
+          </div>
+          <figcaption>07 · Tracking (Detail)</figcaption>
+        </figure>
+        <figure class="final-item">
+          <div class="screen-wrap screen-wrap--final">
+            <img src="s11.png" alt="Activity feed" loading="lazy" />
+          </div>
+          <figcaption>08 · Activity Feed</figcaption>
+        </figure>
+        <figure class="final-item">
+          <div class="screen-wrap screen-wrap--final">
+            <img src="s12.png" alt="Calm banner" loading="lazy" />
+          </div>
+          <figcaption>09 · Calm Waiting Banner</figcaption>
+        </figure>
+
+        <div class="final-item final-item--label">
+          <span class="flow-label">AMBIENT STATES</span>
+        </div>
+        <figure class="final-item">
+          <div class="screen-wrap screen-wrap--final">
+            <img src="s7.png" alt="Ambient A" loading="lazy" />
+          </div>
+          <figcaption>10 · Ambient A</figcaption>
+        </figure>
+        <figure class="final-item">
+          <div class="screen-wrap screen-wrap--final">
+            <img src="s8.png" alt="Ambient B" loading="lazy" />
+          </div>
+          <figcaption>11 · Ambient B</figcaption>
+        </figure>
+        <figure class="final-item">
+          <div class="screen-wrap screen-wrap--final">
+            <img src="s9.png" alt="Ambient C" loading="lazy" />
+          </div>
+          <figcaption>12 · Ambient C</figcaption>
+        </figure>
+        <figure class="final-item">
+          <div class="screen-wrap screen-wrap--final">
+            <img src="s13.png" alt="Calm mode" loading="lazy" />
+          </div>
+          <figcaption>13 · Calm Mode</figcaption>
+        </figure>
+
+        <div class="final-item final-item--label">
+          <span class="flow-label">ARRIVAL</span>
+        </div>
+        <figure class="final-item">
+          <div class="screen-wrap screen-wrap--final">
+            <img src="s14.png" alt="Arriving now" loading="lazy" />
+          </div>
+          <figcaption>14 · Arriving Now</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><hr class="rule" /></div>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <span class="masthead__brand">CASESTUDY.CLUB</span>
+        <p class="footer__note">A UX case study documenting the redesign of Saffron's food delivery order-tracking experience. All screens are original design work. No research findings are claimed beyond what the screens themselves demonstrate.</p>
+      </div>
+      <div class="footer__right">
+        <div class="footer__meta-pair">
+          <span class="label">PUBLISHED</span>
+          <span class="value">11 October 2026</span>
+        </div>
+        <div class="footer__meta-pair">
+          <span class="label">VOLUME</span>
+          <span class="value">IV, No. 024</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
